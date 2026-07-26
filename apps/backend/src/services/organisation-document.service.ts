@@ -3,7 +3,7 @@ import OrganizationDocumentModel, {
   OrganizationDocumentDocument,
   OrganizationDocumentMongo,
   OrgDocumentCategory,
-} from "../models/organisation-document";
+} from "../models/organisation-document.js";
 import {
   OrgDocumentCategory as PrismaOrgDocumentCategory,
   OrgDocumentVisibility as PrismaOrgDocumentVisibility,

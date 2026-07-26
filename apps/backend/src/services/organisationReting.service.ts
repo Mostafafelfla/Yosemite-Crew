@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
-import { OrganisationRatingModel } from "../models/organisationRating";
-import OrganizationModel from "../models/organization";
+import { OrganisationRatingModel } from "../models/organisationRating.js";
+import OrganizationModel from "../models/organization.js";
 import { prisma } from "src/config/prisma";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
 import { isReadFromPostgres } from "src/config/read-switch";

@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import { Prisma } from "@prisma/client";
 
 import { prisma } from "src/config/prisma";
-import { ParentService } from "./parent.service";
+import { ParentService } from "./parent.service.js";
 
 export class CoParentInviteServiceError extends Error {
   constructor(

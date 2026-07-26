@@ -4,26 +4,28 @@ import validator from "validator";
 import OrganisationInviteModel, {
   type CreateOrganisationInviteInput,
   type OrganisationInviteDocument,
-} from "../models/organisationInvite";
+} from "../models/organisationInvite.js";
 import OrganizationModel, {
   type OrganizationMongo,
-} from "../models/organization";
-import SpecialityModel, { type SpecialityDocument } from "../models/speciality";
-import logger from "../utils/logger";
+} from "../models/organization.js";
+import SpecialityModel, {
+  type SpecialityDocument,
+} from "../models/speciality.js";
+import logger from "../utils/logger.js";
 import type { InviteStatus, OrganisationInvite } from "@yosemite-crew/types";
 import {
   OrganisationInviteEmploymentType,
   OrganisationInviteStatus,
   type OrganisationInvite as PrismaOrganisationInvite,
 } from "@prisma/client";
-import { prisma } from "../config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { isReadFromPostgres } from "src/config/read-switch";
 import {
   UserOrganizationService,
   UserOrganizationServiceError,
-} from "./user-organization.service";
-import { sendEmailTemplate } from "../utils/email";
+} from "./user-organization.service.js";
+import { sendEmailTemplate } from "../utils/email.js";
 import UserModel from "src/models/user";
 import { randomBytes } from "node:crypto";
 
@@ -233,8 +235,7 @@ const toPrismaOrganisationInviteData = (doc: OrganisationInviteDocument) => ({
   inviteeName: doc.inviteeName ?? undefined,
   role: doc.role,
   employmentType: (doc.employmentType ?? undefined) as
-    | OrganisationInviteEmploymentType
-    | undefined,
+    OrganisationInviteEmploymentType | undefined,
   token: doc.token,
   status: doc.status as OrganisationInviteStatus,
   expiresAt: doc.expiresAt,

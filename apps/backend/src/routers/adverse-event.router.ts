@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AdverseEventController } from "../controllers/web/adverse-event.controller";
+import { AdverseEventController } from "../controllers/web/adverse-event.controller.js";
 import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
 import { withOrgPermissions } from "src/middlewares/rbac";
 

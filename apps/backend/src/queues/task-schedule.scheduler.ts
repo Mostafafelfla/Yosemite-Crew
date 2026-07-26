@@ -1,5 +1,5 @@
 import logger from "src/utils/logger";
-import { TaskScheduleQueue } from "./task-schedule.queue";
+import { TaskScheduleQueue } from "./task-schedule.queue.js";
 
 export async function registerTaskScheduleSchedulers() {
   await TaskScheduleQueue.add(

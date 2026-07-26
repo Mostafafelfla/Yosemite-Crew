@@ -2,7 +2,7 @@ import { isValidObjectId, Types } from "mongoose";
 import SpecialityModel, {
   type SpecialityDocument,
   type SpecialityMongo,
-} from "../models/speciality";
+} from "../models/speciality.js";
 import {
   fromSpecialityRequestDTO,
   toSpecialityResponseDTO,
@@ -10,7 +10,7 @@ import {
   type SpecialityRequestDTO,
   type SpecialityResponseDTO,
 } from "@yosemite-crew/types";
-import { ServiceService } from "./service.service";
+import { ServiceService } from "./service.service.js";
 import UserModel from "src/models/user";
 import OrganizationModel from "src/models/organization";
 import { sendEmailTemplate } from "src/utils/email";

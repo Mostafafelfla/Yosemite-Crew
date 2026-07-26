@@ -6,11 +6,13 @@ import crypto from "node:crypto";
 import ChatSessionModel, {
   ChatSessionDocument,
   ChatSessionType,
-} from "../models/chatSession";
-import AppointmentModel, { AppointmentDocument } from "../models/appointment";
-import UserOrganizationModel from "../models/user-organization";
-import { UserProfileService } from "./user-profile.service";
-import { UserService } from "./user.service";
+} from "../models/chatSession.js";
+import AppointmentModel, {
+  AppointmentDocument,
+} from "../models/appointment.js";
+import UserOrganizationModel from "../models/user-organization.js";
+import { UserProfileService } from "./user-profile.service.js";
+import { UserService } from "./user.service.js";
 import {
   Prisma,
   ChatSessionStatus,
@@ -146,8 +148,7 @@ const syncChatSessionToPostgres = async (doc: ChatSessionDocument) => {
 };
 
 type ChatAvailability =
-  | { allowed: true; reason?: undefined }
-  | { allowed: false; reason: string };
+  { allowed: true; reason?: undefined } | { allowed: false; reason: string };
 
 const canUseChatNowCore = (
   session: {

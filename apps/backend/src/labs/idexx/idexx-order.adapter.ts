@@ -3,7 +3,7 @@ import type {
   LabOrderAdapter,
   LabOrderCreateInput,
   LabOrderCreateResult,
-} from "../types";
+} from "../types.js";
 import { LabOrderServiceError } from "src/services/lab-order.service";
 import { normalizeLabStatus } from "src/labs/status";
 import {

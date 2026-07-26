@@ -1,5 +1,5 @@
 import { isValidObjectId } from "mongoose";
-import type { OrganizationMongo } from "../models/organization";
+import type { OrganizationMongo } from "../models/organization.js";
 import {
   fromOrganizationRequestDTO,
   toOrganizationResponseDTO,
@@ -8,9 +8,9 @@ import {
   type OrganizationDTOAttributes,
   type Organisation,
 } from "@yosemite-crew/types";
-import { UserOrganizationService } from "./user-organization.service";
-import { SpecialityService } from "./speciality.service";
-import { OrganisationRoomService } from "./organisation-room.service";
+import { UserOrganizationService } from "./user-organization.service.js";
+import { SpecialityService } from "./speciality.service.js";
+import { OrganisationRoomService } from "./organisation-room.service.js";
 import { buildS3Key, moveFile } from "src/middlewares/upload";
 import logger from "src/utils/logger";
 import { Prisma, OrganizationType } from "@prisma/client";

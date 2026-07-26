@@ -2,13 +2,13 @@
 import Stripe from "stripe";
 
 type WebhookSignature = string | string[] | undefined;
-import logger from "../utils/logger";
+import logger from "../utils/logger.js";
 
-import { InvoiceService } from "./invoice.service";
-import { FinancePaymentService } from "./finance/payment";
-import { FinanceSubscriptionService } from "./finance/subscription";
+import { InvoiceService } from "./invoice.service.js";
+import { FinancePaymentService } from "./finance/payment.js";
+import { FinanceSubscriptionService } from "./finance/subscription.js";
 import { NotificationTemplates } from "src/utils/notificationTemplates";
-import { NotificationService } from "./notification.service";
+import { NotificationService } from "./notification.service.js";
 
 import { prisma } from "src/config/prisma";
 import { getOrgBillingCurrency } from "src/utils/billing";

@@ -1,11 +1,11 @@
 import { type Request, type Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   BaseAvailabilityService,
   BaseAvailabilityServiceError,
   type CreateBaseAvailabilityPayload,
   type UpdateBaseAvailabilityPayload,
-} from "../../services/base-availability.service";
+} from "../../services/base-availability.service.js";
 
 type CreateAvailabilityRequest = Request<
   Record<string, never>,

@@ -7,7 +7,7 @@ import type {
 import {
   AdverseEventService,
   AdverseEventServiceError,
-} from "../../services/adverse-event.service";
+} from "../../services/adverse-event.service.js";
 import logger from "src/utils/logger";
 import { RegulatoryAuthorityModel } from "src/models/regulatory-authority";
 import escapeStringRegexp from "escape-string-regexp";

@@ -3,7 +3,7 @@ import AuditTrailModel, {
   AuditEntityType,
   AuditEventType,
   type AuditTrailDocument,
-} from "../models/audit-trail";
+} from "../models/audit-trail.js";
 import { Prisma } from "@prisma/client";
 import { prisma } from "src/config/prisma";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";

@@ -1,6 +1,6 @@
 import { Worker } from "bullmq";
-import { redisConnection } from "../queues/bull.config";
-import { TaskScheduleEngine } from "../services/task.schedule.engine";
+import { redisConnection } from "../queues/bull.config.js";
+import { TaskScheduleEngine } from "../services/task.schedule.engine.js";
 import logger from "src/utils/logger";
 
 export const TaskScheduleWorker = new Worker(

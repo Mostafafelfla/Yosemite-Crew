@@ -4,7 +4,7 @@ import {
   generatePresignedDownloadUrl,
 } from "src/middlewares/upload";
 import { assertSafeString } from "src/utils/sanitize";
-import { AuditTrailService } from "./audit-trail.service";
+import { AuditTrailService } from "./audit-trail.service.js";
 
 export class DocumentServiceError extends Error {
   constructor(

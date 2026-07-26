@@ -6,7 +6,7 @@ import jwt, {
 } from "jsonwebtoken";
 import jwksClient from "jwks-rsa";
 import admin from "firebase-admin";
-import logger from "../utils/logger";
+import logger from "../utils/logger.js";
 
 const {
   COGNITO_REGION,

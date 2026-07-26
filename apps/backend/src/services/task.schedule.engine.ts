@@ -1,6 +1,6 @@
 import { Prisma, TaskScheduleStatus, TemplateKind } from "@prisma/client";
 import { prisma } from "src/config/prisma";
-import { TaskService } from "./task.service";
+import { TaskService } from "./task.service.js";
 
 type StoredTaskWorkflowSeed = {
   source: "YC_LIBRARY" | "ORG_TEMPLATE" | "CUSTOM";

@@ -7,7 +7,7 @@ import {
   requireNonEmptyString,
   roomTypeSupportsUnits,
   RoomValidationError,
-} from "./room-management.helpers";
+} from "./room-management.helpers.js";
 
 type RoomRow = {
   id: string;

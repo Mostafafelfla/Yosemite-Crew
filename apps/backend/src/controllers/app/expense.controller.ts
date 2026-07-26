@@ -4,7 +4,7 @@ import {
   ExternalExpenseServiceError,
   type ExternalExpenseInput,
   type ExternalExpenseUpdateInput,
-} from "../../services/expense.service";
+} from "../../services/expense.service.js";
 import logger from "src/utils/logger";
 
 export const ExpenseController = {

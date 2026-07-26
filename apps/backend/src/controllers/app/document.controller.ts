@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   DocumentAttachmentInput,
   DocumentCreateContext,
   DocumentService,
   DocumentServiceError,
-} from "../../services/document.service";
+} from "../../services/document.service.js";
 import { generatePresignedUrl } from "src/middlewares/upload";
 import { AuthUserMobileService } from "src/services/authUserMobile.service";
 import { OrgRequest } from "src/middlewares/rbac";

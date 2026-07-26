@@ -1,14 +1,14 @@
 import { Prisma } from "@prisma/client";
 import { prisma } from "src/config/prisma";
-import { ClinicalArtifactService } from "./clinical-artifact.service";
-import { FormAssignmentService } from "./form-assignment.service";
+import { ClinicalArtifactService } from "./clinical-artifact.service.js";
+import { FormAssignmentService } from "./form-assignment.service.js";
 import {
   readActorNameFromEventPayload,
   resolveActorDisplayName,
-} from "./finance/events";
-import { InvoiceService, InvoiceServiceError } from "./invoice.service";
-import { createRenderedDocumentRecord } from "./rendered-document.service";
-import { roundMoney } from "./finance/pricing";
+} from "./finance/events.js";
+import { InvoiceService, InvoiceServiceError } from "./invoice.service.js";
+import { createRenderedDocumentRecord } from "./rendered-document.service.js";
+import { roundMoney } from "./finance/pricing.js";
 import type {
   Case,
   Encounter,
@@ -933,8 +933,7 @@ const readNumber = (value: unknown): number | null =>
 
 const readText = (...values: unknown[]) =>
   values.find((value) => typeof value === "string" && value.trim()) as
-    | string
-    | undefined;
+    string | undefined;
 
 const buildInvoiceLineFromTreatmentItem = (row: TreatmentItemRow) => {
   const priceSnapshot = isRecord(row.priceSnapshot) ? row.priceSnapshot : {};
@@ -1081,8 +1080,7 @@ const buildTreatmentItemsFromPrescriptions = (
       ? record.prescription.medications
       : [];
     const firstMedication = medications.find((entry) => isRecord(entry)) as
-      | Record<string, unknown>
-      | undefined;
+      Record<string, unknown> | undefined;
     const productId =
       (firstMedication &&
         typeof firstMedication.inventoryItemId === "string" &&

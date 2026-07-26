@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { StripeController } from "../controllers/web/stripe.controller";
+import { StripeController } from "../controllers/web/stripe.controller.js";
 import bodyParser from "body-parser";
 import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
 import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";

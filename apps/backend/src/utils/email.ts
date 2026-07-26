@@ -1,11 +1,11 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
-import logger from "./logger";
+import logger from "./logger.js";
 import {
   renderEmailTemplate,
   type EmailTemplateDataMap,
   type EmailTemplateId,
-} from "./email-templates";
+} from "./email-templates.js";
 
 const {
   AWS_REGION,

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ExpenseController } from "../controllers/app/expense.controller";
+import { ExpenseController } from "../controllers/app/expense.controller.js";
 import { authorizeCognitoMobile } from "src/middlewares/auth";
 
 const router = Router();

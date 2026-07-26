@@ -1,5 +1,5 @@
 import { Schema, model, type HydratedDocument } from "mongoose";
-import type { CodeSystem } from "./code-entry";
+import type { CodeSystem } from "./code-entry.js";
 
 export interface CodeMappingMongo {
   sourceSystem: CodeSystem;

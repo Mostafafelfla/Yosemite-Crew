@@ -3,12 +3,12 @@ import { z } from "zod";
 import {
   ServiceService,
   ServiceServiceError,
-} from "../../services/service.service";
+} from "../../services/service.service.js";
 import {
   CatalogService,
   CatalogServiceError,
-} from "../../services/catalog.service";
-import logger from "../../utils/logger";
+} from "../../services/catalog.service.js";
+import logger from "../../utils/logger.js";
 import { ServiceRequestDTO } from "@yosemite-crew/types";
 import type { OrgRequest } from "src/middlewares/rbac";
 import dayjs from "dayjs";

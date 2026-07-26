@@ -10,8 +10,8 @@ import type {
 } from "@prisma/client";
 import Stripe from "stripe";
 import { prisma } from "src/config/prisma";
-import { FinanceEventService } from "./events";
-import { roundMoney } from "./pricing";
+import { FinanceEventService } from "./events.js";
+import { roundMoney } from "./pricing.js";
 
 type PaymentLineSummary = {
   id: string;

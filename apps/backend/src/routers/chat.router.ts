@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ChatController } from "../controllers/app/chat.controller";
+import { ChatController } from "../controllers/app/chat.controller.js";
 import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
 
 export const chatRouter = Router();

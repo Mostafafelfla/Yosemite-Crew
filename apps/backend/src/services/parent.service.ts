@@ -6,8 +6,8 @@ import {
 } from "@yosemite-crew/types";
 import { ParentCreatedFrom, Prisma } from "@prisma/client";
 import { prisma } from "src/config/prisma";
-import { AuditTrailService } from "./audit-trail.service";
-import { AuthUserMobileService } from "./authUserMobile.service";
+import { AuditTrailService } from "./audit-trail.service.js";
+import { AuthUserMobileService } from "./authUserMobile.service.js";
 import { buildS3Key, moveFile } from "src/middlewares/upload";
 import logger from "src/utils/logger";
 import escapeStringRegexp from "escape-string-regexp";
@@ -417,8 +417,7 @@ export const ParentService = {
         linkedUserId: parent.linkedUserId ?? undefined,
         createdFrom: parent.createdFrom as ParentCreatedFrom,
         alerts: (parent as Parent & { alerts?: Parent["alerts"] }).alerts as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
       },
     });
 
@@ -527,8 +526,7 @@ export const ParentService = {
           ? {
               alerts:
                 ((parent as Parent & { alerts?: Parent["alerts"] }).alerts as
-                  | Prisma.InputJsonValue
-                  | undefined) ?? Prisma.JsonNull,
+                  Prisma.InputJsonValue | undefined) ?? Prisma.JsonNull,
             }
           : {}),
       },

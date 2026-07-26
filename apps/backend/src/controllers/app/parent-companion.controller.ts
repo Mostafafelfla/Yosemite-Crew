@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   ParentCompanionService,
   ParentCompanionServiceError,
-} from "../../services/parent-companion.service";
+} from "../../services/parent-companion.service.js";
 import { ParentService } from "src/services/parent.service";
 import type { ParentCompanionPermissions } from "@yosemite-crew/types";
 import type { AuthenticatedRequest } from "src/middlewares/auth";

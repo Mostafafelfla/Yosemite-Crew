@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import { Types } from "mongoose";
 import {
   CompanionOrganisationService,
   CompanionOrganisationServiceError,
-} from "../../services/companion-organisation.service";
+} from "../../services/companion-organisation.service.js";
 import { ParentService } from "src/services/parent.service";
 import OrganizationModel, {
   type OrganizationMongo,

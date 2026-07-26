@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { OrganisationRoomController } from "../controllers/web/organisation-room.controller";
+import { OrganisationRoomController } from "../controllers/web/organisation-room.controller.js";
 import { authorizeCognito } from "src/middlewares/auth";
 import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
 

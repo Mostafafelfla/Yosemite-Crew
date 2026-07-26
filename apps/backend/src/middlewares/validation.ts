@@ -1,6 +1,6 @@
 import { plainToInstance } from "class-transformer";
 import { validate } from "class-validator";
-import { sanitizeInput } from "../utils/sanitize";
+import { sanitizeInput } from "../utils/sanitize.js";
 import { NextFunction, Request, Response } from "express";
 
 export function validateAndSanitizeDTO(DTOClass: any) {

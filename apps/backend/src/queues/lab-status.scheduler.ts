@@ -1,5 +1,5 @@
 import logger from "src/utils/logger";
-import { LabStatusQueue } from "./lab-status.queue";
+import { LabStatusQueue } from "./lab-status.queue.js";
 
 const FIVE_MIN_MS = 5 * 60 * 1000;
 

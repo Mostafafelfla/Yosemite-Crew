@@ -3,8 +3,8 @@ import type {
   IntegrationAdapter,
   IntegrationCredentials,
   IntegrationValidationResult,
-} from "../types";
-import { IdexxClient } from "./idexx.client";
+} from "../types.js";
+import { IdexxClient } from "./idexx.client.js";
 
 const ensureNonEmpty = (value: string | undefined, field: string) => {
   if (!value?.trim()) {

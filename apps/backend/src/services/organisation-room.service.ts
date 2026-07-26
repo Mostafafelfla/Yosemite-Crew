@@ -8,7 +8,7 @@ import {
   normalizeStrictStringList,
   requireNonEmptyString,
   RoomValidationError,
-} from "./room-management.helpers";
+} from "./room-management.helpers.js";
 
 export type OrganisationRoomInput = {
   organisationId: string;

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { DocumentController } from "../controllers/app/document.controller";
+import { DocumentController } from "../controllers/app/document.controller.js";
 import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
 import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
 

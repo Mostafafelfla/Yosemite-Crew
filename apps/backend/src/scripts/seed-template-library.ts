@@ -4,7 +4,7 @@ import { prisma } from "src/config/prisma";
 import {
   DEFAULT_LIBRARY_TEMPLATE_SEEDS,
   type DefaultLibraryTemplateSeed,
-} from "./template-library-seed.data";
+} from "./template-library-seed.data.js";
 
 const seedTemplate = async (
   seed: DefaultLibraryTemplateSeed & {

@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
-import type { UserOrganizationMongo } from "../models/user-organization";
-import type { OrganizationMongo } from "../models/organization";
+import type { UserOrganizationMongo } from "../models/user-organization.js";
+import type { OrganizationMongo } from "../models/organization.js";
 import {
   fromUserOrganizationRequestDTO,
   toUserOrganizationResponseDTO,
@@ -9,8 +9,8 @@ import {
   type UserOrganization,
 } from "@yosemite-crew/types";
 import { ROLE_PERMISSIONS, RoleCode } from "src/models/role-permission";
-import { AvailabilityService } from "./availability.service";
-import { StripeService } from "./stripe.service";
+import { AvailabilityService } from "./availability.service.js";
+import { StripeService } from "./stripe.service.js";
 import { sendFreePlanLimitReachedEmail } from "src/utils/org-usage-notifications";
 import { sendEmailTemplate } from "src/utils/email";
 import logger from "src/utils/logger";

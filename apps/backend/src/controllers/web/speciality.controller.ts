@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   fromSpecialityRequestDTO,
   toSpecialityBundleResponseDTO,
@@ -10,12 +10,12 @@ import {
 import {
   CatalogService,
   CatalogServiceError,
-} from "../../services/catalog.service";
+} from "../../services/catalog.service.js";
 import {
   SpecialityService,
   SpecialityServiceError,
   type SpecialityFHIRPayload,
-} from "../../services/speciality.service";
+} from "../../services/speciality.service.js";
 
 const isFHIRSpecialityPayload = (
   payload: unknown,

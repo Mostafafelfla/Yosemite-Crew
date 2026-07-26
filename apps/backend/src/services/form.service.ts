@@ -23,13 +23,13 @@ import {
   type TemplateLike,
 } from "@yosemite-crew/types";
 import { templateMapper } from "src/services/fhir-template.mapper";
-import { buildPdfViewModel, renderPdf } from "./formPDF.service";
+import { buildPdfViewModel, renderPdf } from "./formPDF.service.js";
 import { FormAssignmentService } from "src/services/form-assignment.service";
 import logger from "src/utils/logger";
 import AppointmentModel from "src/models/appointment";
 import OrganizationModel from "src/models/organization";
-import { DocumensoService } from "./documenso.service";
-import { AuditTrailService } from "./audit-trail.service";
+import { DocumensoService } from "./documenso.service.js";
+import { AuditTrailService } from "./audit-trail.service.js";
 import UserModel from "src/models/user";
 import {
   FormRequiredSigner as PrismaFormRequiredSigner,
@@ -186,10 +186,7 @@ const loadAppointmentForFormsRecord = async (
 };
 
 type NormalizableObjectId =
-  | Types.ObjectId
-  | string
-  | { toHexString(): string }
-  | { toString(): string };
+  Types.ObjectId | string | { toHexString(): string } | { toString(): string };
 
 const normalizeObjectId = (
   id: NormalizableObjectId | null | undefined,
@@ -792,11 +789,7 @@ const assertSoapAppointmentAccess = (params: {
 };
 
 type SoapNoteType =
-  | "Subjective"
-  | "Objective"
-  | "Assessment"
-  | "Plan"
-  | "Discharge";
+  "Subjective" | "Objective" | "Assessment" | "Plan" | "Discharge";
 
 type SoapNoteEntry = {
   submissionId: string;

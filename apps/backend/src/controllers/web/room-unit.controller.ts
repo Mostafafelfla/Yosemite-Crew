@@ -12,7 +12,7 @@ import {
   handleError,
   isLocationResourcePayload,
   requireParam,
-} from "./room-unit.controller.shared";
+} from "./room-unit.controller.shared.js";
 
 export const RoomUnitController = {
   create: async (req: Request, res: Response) => {

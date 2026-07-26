@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DeviceTokenService } from "../../services/deviceToken.service";
+import { DeviceTokenService } from "../../services/deviceToken.service.js";
 import logger from "src/utils/logger";
 
 type RegisterDeviceTokenBody = {

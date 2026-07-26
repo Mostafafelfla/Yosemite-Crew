@@ -1,5 +1,5 @@
 import { Job, Worker } from "bullmq";
-import { redisConnection } from "../queues/bull.config";
+import { redisConnection } from "../queues/bull.config.js";
 import logger from "src/utils/logger";
 import { AppointmentJobs } from "src/queues/appointment.queue";
 import { AppointmentService } from "src/services/appointment.service";

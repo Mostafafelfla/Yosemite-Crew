@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   UserOrganizationService,
   UserOrganizationServiceError,
   type UserOrganizationFHIRPayload,
-} from "../../services/user-organization.service";
+} from "../../services/user-organization.service.js";
 import { resolveUserIdFromRequest } from "src/utils/request";
 
 const normalizeOrganisationReference = (value: string): string => {
@@ -21,14 +21,12 @@ const getOrganisationReference = (resource: unknown): string | undefined => {
 
   if (Array.isArray(resource)) {
     const first = resource[0] as
-      | { organizationReference?: unknown; mapping?: unknown }
-      | undefined;
+      { organizationReference?: unknown; mapping?: unknown } | undefined;
     if (first && typeof first.organizationReference === "string") {
       return first.organizationReference;
     }
     const firstMapping = first?.mapping as
-      | { organizationReference?: unknown }
-      | undefined;
+      { organizationReference?: unknown } | undefined;
     if (
       firstMapping &&
       typeof firstMapping.organizationReference === "string"
@@ -47,8 +45,7 @@ const getOrganisationReference = (resource: unknown): string | undefined => {
   }
 
   const mapping = candidate.mapping as
-    | { organizationReference?: unknown }
-    | undefined;
+    { organizationReference?: unknown } | undefined;
   return typeof mapping?.organizationReference === "string"
     ? mapping.organizationReference
     : undefined;

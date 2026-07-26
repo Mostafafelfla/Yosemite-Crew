@@ -1,5 +1,5 @@
 import logger from "src/utils/logger";
-import { AppointmentQueue, AppointmentJobs } from "./appointment.queue";
+import { AppointmentQueue, AppointmentJobs } from "./appointment.queue.js";
 
 export async function registerAppointmentSchedulers() {
   // 🔄 Appointment Status Updater: every 15 minutes

@@ -2,7 +2,7 @@ import admin from "firebase-admin";
 import { NotificationType } from "@prisma/client";
 import logger from "src/utils/logger";
 import { NotificationPayload } from "src/utils/notificationTemplates";
-import { DeviceTokenService } from "./deviceToken.service";
+import { DeviceTokenService } from "./deviceToken.service.js";
 import { NotificationModel } from "src/models/notification";
 import { prisma } from "src/config/prisma";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";

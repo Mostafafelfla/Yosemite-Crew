@@ -5,8 +5,11 @@ import {
   TaxProvider as PrismaTaxProvider,
 } from "@prisma/client";
 
-import type { InvoiceDiscountInput, InvoicePricingBreakdown } from "./pricing";
-import { roundMoney } from "./pricing";
+import type {
+  InvoiceDiscountInput,
+  InvoicePricingBreakdown,
+} from "./pricing.js";
+import { roundMoney } from "./pricing.js";
 
 export type InvoiceTaxSnapshotInput = {
   provider: PrismaTaxProvider;

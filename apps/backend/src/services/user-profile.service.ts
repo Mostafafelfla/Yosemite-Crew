@@ -4,7 +4,7 @@ import type {
   UserProfileProfessionalDetailsMongo,
   UserProfileAddressMongo,
   UserProfileDocumentMongo,
-} from "../models/user-profile";
+} from "../models/user-profile.js";
 import type {
   UserProfile as UserProfileType,
   UserAvailability,
@@ -12,7 +12,7 @@ import type {
 import {
   BaseAvailabilityService,
   BaseAvailabilityServiceError,
-} from "./base-availability.service";
+} from "./base-availability.service.js";
 import { getURLForKey } from "src/middlewares/upload";
 import { prisma } from "src/config/prisma";
 import { Prisma } from "@prisma/client";
@@ -589,8 +589,7 @@ const buildPersonalDetailsFromPrisma = (
   profile: PrismaUserProfileWithAddress,
 ): UserProfilePersonalDetailsMongo | undefined => {
   const rawPersonalDetails = profile.personalDetails as
-    | UserProfilePersonalDetailsMongo
-    | undefined;
+    UserProfilePersonalDetailsMongo | undefined;
 
   if (!rawPersonalDetails && !profile.address) {
     return undefined;
@@ -633,8 +632,7 @@ const buildDomainProfileFromPrisma = (
   options?: { statusOverride?: UserProfileMongo["status"] },
 ): UserProfileType => {
   const rawProfessionalDetails = profile.professionalDetails as
-    | UserProfileProfessionalDetailsMongo
-    | undefined;
+    UserProfileProfessionalDetailsMongo | undefined;
 
   const personalDetails = buildPersonalDetailsFromPrisma(profile);
 
@@ -925,8 +923,7 @@ export const UserProfileService = {
         organizationId: updated.organizationId,
         personalDetails,
         professionalDetails: updated.professionalDetails as
-          | UserProfileProfessionalDetailsMongo
-          | undefined,
+          UserProfileProfessionalDetailsMongo | undefined,
         status: updated.status ?? "DRAFT",
       },
       availability,
@@ -1011,8 +1008,7 @@ export const UserProfileService = {
       organizationId: profile.organizationId,
       personalDetails: personalDetailsForStatus,
       professionalDetails: (profile.professionalDetails ?? undefined) as
-        | UserProfileProfessionalDetailsMongo
-        | undefined,
+        UserProfileProfessionalDetailsMongo | undefined,
       status: profile.status ?? "DRAFT",
     };
     const status = determineProfileStatus(profileForStatus, availability);

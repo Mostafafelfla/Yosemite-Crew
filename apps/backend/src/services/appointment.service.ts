@@ -4,7 +4,7 @@ import AppointmentModel, {
   AppointmentDocument,
   AppointmentMongo,
   AppointmentStatus,
-} from "../models/appointment";
+} from "../models/appointment.js";
 import {
   Appointment,
   AppointmentPaymentStatus,
@@ -16,33 +16,33 @@ import {
 import { Prisma } from "@prisma/client";
 import { prisma } from "src/config/prisma";
 import ServiceModel from "src/models/service";
-import { InvoiceService } from "./invoice.service";
-import { roundMoney } from "./finance/pricing";
-import { StripeService } from "./stripe.service";
+import { InvoiceService } from "./invoice.service.js";
+import { roundMoney } from "./finance/pricing.js";
+import { StripeService } from "./stripe.service.js";
 import { OccupancyModel } from "src/models/occupancy";
 import OrganizationModel from "src/models/organization";
 import UserProfileModel from "src/models/user-profile";
 import UserModel from "src/models/user";
 import { ParentModel } from "src/models/parent";
 import { NotificationTemplates } from "src/utils/notificationTemplates";
-import { NotificationService } from "./notification.service";
-import { TaskService } from "./task.service";
-import { FormService, FormServiceError } from "./form.service";
+import { NotificationService } from "./notification.service.js";
+import { TaskService } from "./task.service.js";
+import { FormService, FormServiceError } from "./form.service.js";
 import { OrgBilling } from "src/models/organization.billing";
 import { OrgUsageCounters } from "src/models/organisation.usage.counter";
 import { sendEmailTemplate } from "src/utils/email";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
 import logger from "src/utils/logger";
 import { sendFreePlanLimitReachedEmail } from "src/utils/org-usage-notifications";
-import { AuditTrailService } from "./audit-trail.service";
+import { AuditTrailService } from "./audit-trail.service.js";
 import { FormModel } from "src/models/form";
 import InvoiceModel from "src/models/invoice";
 import { isReadFromPostgres } from "src/config/read-switch";
 import { resolvePaymentCollectionMethod } from "src/utils/payment";
 import { ensureObjectId as ensureObjectIdStrict } from "src/utils/mongo";
 import { assertEmail } from "src/utils/sanitize";
-import { CatalogService, CatalogServiceError } from "./catalog.service";
-import { CompanionOrganisationService } from "./companion-organisation.service";
+import { CatalogService, CatalogServiceError } from "./catalog.service.js";
+import { CompanionOrganisationService } from "./companion-organisation.service.js";
 
 export class AppointmentServiceError extends Error {
   constructor(
@@ -372,8 +372,7 @@ export const resolveCatalogSelectionSafe = async (
 
 const assertParentCanCancelAppointment = (params: {
   appointment:
-    | ParentCancelableAppointment
-    | ParentCancelableAppointmentDocument;
+    ParentCancelableAppointment | ParentCancelableAppointmentDocument;
   parentId: string;
   context: string;
 }) => {
@@ -1823,8 +1822,7 @@ const toDomainFromPrisma = (row: {
     supportStaff: (row.supportStaff ?? []) as Appointment["supportStaff"],
     room: (row.room ?? undefined) as Appointment["room"] | undefined,
     appointmentType: (row.appointmentType ?? undefined) as
-      | Appointment["appointmentType"]
-      | undefined,
+      Appointment["appointmentType"] | undefined,
     organisationId: row.organisationId,
     appointmentDate: row.appointmentDate,
     startTime: row.startTime,
@@ -1837,8 +1835,7 @@ const toDomainFromPrisma = (row: {
     createdAt: row.createdAt,
     updatedAt: row.updatedAt,
     attachments: (row.attachments ?? undefined) as
-      | Appointment["attachments"]
-      | undefined,
+      Appointment["attachments"] | undefined,
     formIds: row.formIds ?? [],
   });
 

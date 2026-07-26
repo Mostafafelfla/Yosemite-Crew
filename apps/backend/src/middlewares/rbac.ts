@@ -5,8 +5,8 @@ import {
   Permission,
   ROLE_PERMISSIONS,
   RoleCode,
-} from "../models/role-permission";
-import { AuthenticatedRequest } from "./auth";
+} from "../models/role-permission.js";
+import { AuthenticatedRequest } from "./auth.js";
 import UserOrganizationModel from "src/models/user-organization";
 import { prisma } from "src/config/prisma";
 import { isReadFromPostgres } from "src/config/read-switch";

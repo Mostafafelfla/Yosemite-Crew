@@ -3,7 +3,7 @@ import BaseAvailabilityModel, {
   type BaseAvailabilityDocument,
   type BaseAvailabilityMongo,
   type AvailabilitySlotMongo,
-} from "../models/base-availability";
+} from "../models/base-availability.js";
 import type { UserAvailability, DayOfWeek } from "@yosemite-crew/types";
 import { prisma } from "src/config/prisma";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";

@@ -6,9 +6,9 @@ import ContactRequestModel, {
   ContactStatus,
   ContactType,
   DsraDetails,
-} from "../models/contect-us";
+} from "../models/contect-us.js";
 import { Prisma } from "@prisma/client";
-import { prisma } from "../config/prisma";
+import { prisma } from "../config/prisma.js";
 import { isReadFromPostgres } from "src/config/read-switch";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
 

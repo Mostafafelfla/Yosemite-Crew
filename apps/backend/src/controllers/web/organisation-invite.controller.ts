@@ -1,12 +1,12 @@
 import type { Request, Response } from "express";
 
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   OrganisationInviteService,
   OrganisationInviteServiceError,
   type CreateInvitePayload,
-} from "../../services/organisation-invite.service";
-import type { AuthenticatedRequest } from "../../middlewares/auth";
+} from "../../services/organisation-invite.service.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 import { resolveUserIdFromRequest } from "src/utils/request";
 
 type CreateInviteBody = Omit<

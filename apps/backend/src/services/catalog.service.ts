@@ -23,7 +23,7 @@ import utc from "dayjs/plugin/utc.js";
 import { Prisma } from "@prisma/client";
 import { AvailabilitySlotMongo } from "src/models/base-availability";
 import { prisma } from "src/config/prisma";
-import { AvailabilityService } from "./availability.service";
+import { AvailabilityService } from "./availability.service.js";
 import {
   addCachedPromise,
   type CachedPromise,
@@ -2206,19 +2206,17 @@ export const CatalogService = {
 
           if (nextPackageItems.length > 0) {
             await tx.productPackageItem.createMany({
-              data: nextPackageItems.map(
-                (item): PackageItemCreateData => ({
-                  packageId: pkg.id,
-                  childProductItemId: item.childProductItemId,
-                  inventoryItemId: item.inventoryItemId,
-                  quantity: item.quantity,
-                  pricingMode: item.pricingMode,
-                  overridePrice: item.overridePrice,
-                  discountPercent: item.discountPercent,
-                  sortOrder: item.sortOrder,
-                  isOptional: item.isOptional,
-                }),
-              ),
+              data: nextPackageItems.map((item): PackageItemCreateData => ({
+                packageId: pkg.id,
+                childProductItemId: item.childProductItemId,
+                inventoryItemId: item.inventoryItemId,
+                quantity: item.quantity,
+                pricingMode: item.pricingMode,
+                overridePrice: item.overridePrice,
+                discountPercent: item.discountPercent,
+                sortOrder: item.sortOrder,
+                isOptional: item.isOptional,
+              })),
             });
           }
         }

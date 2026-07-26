@@ -1,5 +1,5 @@
-import { IdexxOrderAdapter } from "./idexx/idexx-order.adapter";
-import type { LabOrderAdapter, LabProvider } from "./types";
+import { IdexxOrderAdapter } from "./idexx/idexx-order.adapter.js";
+import type { LabOrderAdapter, LabProvider } from "./types.js";
 
 const adapters: Record<LabProvider, LabOrderAdapter> = {
   IDEXX: new IdexxOrderAdapter(),
@@ -8,4 +8,4 @@ const adapters: Record<LabProvider, LabOrderAdapter> = {
 export const getLabOrderAdapter = (provider: LabProvider): LabOrderAdapter =>
   adapters[provider];
 
-export * from "./types";
+export * from "./types.js";

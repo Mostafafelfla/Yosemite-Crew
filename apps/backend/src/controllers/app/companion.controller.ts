@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   CompanionService,
   CompanionServiceError,
-} from "../../services/companion.service";
+} from "../../services/companion.service.js";
 import type { CompanionRequestDTO } from "@yosemite-crew/types";
 import { CompanionOrganisationService } from "src/services/companion-organisation.service";
 import OrganizationModel from "src/models/organization";
@@ -13,12 +13,10 @@ import {
   resolveOrganisationIdFromRequest,
   resolveUserIdFromRequest,
 } from "src/utils/request";
-import { getProfileUploadUrl } from "./profile-upload.handler";
+import { getProfileUploadUrl } from "./profile-upload.handler.js";
 
 type CompanionRequestBody =
-  | CompanionRequestDTO
-  | { payload?: unknown }
-  | undefined;
+  CompanionRequestDTO | { payload?: unknown } | undefined;
 
 // Validate FHIR
 const isCompanionPayload = (

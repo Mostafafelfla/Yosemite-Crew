@@ -1,9 +1,9 @@
 import { Router } from "express";
-import logger from "../utils/logger";
+import logger from "../utils/logger.js";
 import {
   resolveMobileConfig,
   summarizeAppUpdateConfig,
-} from "../utils/mobile-config";
+} from "../utils/mobile-config.js";
 
 const router = Router();
 

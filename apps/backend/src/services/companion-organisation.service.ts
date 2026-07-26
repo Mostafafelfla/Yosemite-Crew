@@ -8,9 +8,9 @@ import {
 import type { PatientOrganisation } from "@prisma/client";
 import { prisma } from "src/config/prisma";
 import { assertSafeString } from "src/utils/sanitize";
-import { AuditTrailService } from "./audit-trail.service";
-import { toFHIRFromPrisma as toFHIRCompanionFromPrisma } from "./companion.service";
-import { toFHIRFromPrisma as toFHIRParentFromPrisma } from "./parent.service";
+import { AuditTrailService } from "./audit-trail.service.js";
+import { toFHIRFromPrisma as toFHIRCompanionFromPrisma } from "./companion.service.js";
+import { toFHIRFromPrisma as toFHIRParentFromPrisma } from "./parent.service.js";
 import { Types } from "mongoose";
 
 type BusinessType = "HOSPITAL" | "BREEDER" | "BOARDER" | "GROOMER";

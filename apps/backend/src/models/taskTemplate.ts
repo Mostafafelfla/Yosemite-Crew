@@ -1,5 +1,5 @@
 import { Schema, model, HydratedDocument } from "mongoose";
-import { TaskKind } from "./taskLibraryDefinition";
+import { TaskKind } from "./taskLibraryDefinition.js";
 
 interface TaskTemplateMongo {
   source: "ORG_TEMPLATE";

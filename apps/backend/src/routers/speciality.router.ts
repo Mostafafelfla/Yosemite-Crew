@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { SpecialityController } from "../controllers/web/speciality.controller";
+import { SpecialityController } from "../controllers/web/speciality.controller.js";
 import { authorizeCognito } from "src/middlewares/auth";
 import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
 

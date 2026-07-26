@@ -1,5 +1,5 @@
 import logger from "src/utils/logger";
-import { IdexxReferenceQueue } from "./idexx-reference.queue";
+import { IdexxReferenceQueue } from "./idexx-reference.queue.js";
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 

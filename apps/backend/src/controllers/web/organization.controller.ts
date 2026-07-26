@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   OrganisationSearchInput,
   OrganizationService,
   OrganizationServiceError,
   type OrganizationFHIRPayload,
-} from "../../services/organization.service";
+} from "../../services/organization.service.js";
 import { generatePresignedUrl } from "src/middlewares/upload";
 import { stringify } from "node:querystring";
 import helpers from "src/utils/helper";

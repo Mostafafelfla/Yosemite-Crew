@@ -2,9 +2,9 @@
 import { StreamChat } from "stream-chat";
 import crypto from "node:crypto";
 
-import { ChatServiceError } from "./chat.service";
-import { UserProfileService } from "./user-profile.service";
-import { UserService } from "./user.service";
+import { ChatServiceError } from "./chat.service.js";
+import { UserProfileService } from "./user-profile.service.js";
+import { UserService } from "./user.service.js";
 import { prisma } from "src/config/prisma";
 import { isReadFromPostgres } from "src/config/read-switch";
 import UserOrganizationModel from "src/models/user-organization";

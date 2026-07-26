@@ -2,7 +2,7 @@ import { Types, type FilterQuery } from "mongoose";
 import ServiceModel, {
   type ServiceMongo,
   type ServiceDocument,
-} from "../models/service";
+} from "../models/service.js";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import {
@@ -17,7 +17,7 @@ import OrganizationModel, {
 import escapeStringRegexp from "escape-string-regexp";
 import SpecialityModel from "src/models/speciality";
 import { AvailabilitySlotMongo } from "src/models/base-availability";
-import { AvailabilityService } from "./availability.service";
+import { AvailabilityService } from "./availability.service.js";
 import helpers from "src/utils/helper";
 import { prisma } from "src/config/prisma";
 import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";

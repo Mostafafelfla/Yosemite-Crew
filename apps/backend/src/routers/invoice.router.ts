@@ -1,6 +1,6 @@
 import { Router } from "express";
 import rateLimit from "express-rate-limit";
-import { InvoiceController } from "../controllers/app/invoice.controller";
+import { InvoiceController } from "../controllers/app/invoice.controller.js";
 import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
 import {
   requirePermission,

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CompanionController } from "../controllers/app/companion.controller";
+import { CompanionController } from "../controllers/app/companion.controller.js";
 import { authorizeCognitoMobile, authorizeCognito } from "src/middlewares/auth";
 import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
 
