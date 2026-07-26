@@ -14,7 +14,7 @@ type DocumentPdfTemplateDefinition = {
 
 const DOCUMENT_PDF_TEMPLATE_DIRECTORY = path.join(
   process.cwd(),
-  "src/utils/pdf-templates",
+  "../utils/pdf-templates.js",
 );
 
 const DOCUMENT_PDF_TEMPLATES: Record<
