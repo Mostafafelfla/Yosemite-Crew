@@ -14,7 +14,8 @@
     "prisma"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "prisma generate && tsc -p tsconfig.build.json",
+    "postinstall": "prisma generate",
     "clean": "rm -rf dist",
     "test": "node --test dist/tenant.test.js",
     "type-check": "prisma generate --schema prisma/schema.prisma && tsc --noEmit",
