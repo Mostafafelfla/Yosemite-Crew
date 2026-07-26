@@ -4,8 +4,8 @@ import {
   InvalidMarketingUnsubscribeTokenError,
   MarketingUnsubscribeConfigError,
   unsubscribeMarketingEmail,
-} from "src/services/marketing-unsubscribe.service";
-import logger from "src/utils/logger";
+} from "../../services/marketing-unsubscribe.service.js";
+import logger from "../../utils/logger.js";
 
 const UnsubscribeQuerySchema = z.object({
   token: z.string().min(1),

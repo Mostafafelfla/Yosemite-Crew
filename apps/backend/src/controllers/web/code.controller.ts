@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { CodeService, CodeServiceError } from "src/services/code.service";
-import type { CodeSystem, CodeType } from "src/models/code-entry";
-import logger from "src/utils/logger";
+import { CodeService, CodeServiceError } from "../../services/code.service.js";
+import type { CodeSystem, CodeType } from "../../models/code-entry.js";
+import logger from "../../utils/logger.js";
 import {
   ClinicalTermsService,
   type ClinicalSpecies,
-} from "src/services/clinical-terms.service";
+} from "../../services/clinical-terms.service.js";
 import { z } from "zod";
 
 const parseBoolean = (value: unknown): boolean | undefined => {

@@ -10,7 +10,7 @@ import {
   OrganisationRoomServiceError,
   type OrganisationRoomInput,
 } from "../../services/organisation-room.service.js";
-import { OrgRequest } from "src/middlewares/rbac";
+import { OrgRequest } from "../../middlewares/rbac.js";
 
 const requireParam = (
   res: Response,

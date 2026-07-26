@@ -1,12 +1,12 @@
 import { Types } from "mongoose";
 
-import OrganizationModel from "src/models/organization";
-import UserOrganizationModel from "src/models/user-organization";
-import UserModel from "src/models/user";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { sendEmailTemplate } from "src/utils/email";
-import logger from "src/utils/logger";
+import OrganizationModel from "../models/organization.js";
+import UserOrganizationModel from "../models/user-organization.js";
+import UserModel from "../models/user.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { sendEmailTemplate } from "./email.js";
+import logger from "./logger.js";
 
 const SUPPORT_EMAIL_ADDRESS =
   process.env.SUPPORT_EMAIL ??

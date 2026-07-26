@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import logger from "../../utils/logger.js";
-import { generatePresignedUrl } from "src/middlewares/upload";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
 
 export const getProfileUploadUrl = async (req: Request, res: Response) => {
   try {

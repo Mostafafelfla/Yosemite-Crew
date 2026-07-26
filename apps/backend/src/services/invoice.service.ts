@@ -27,17 +27,17 @@ import {
 } from "./finance/payment.js";
 import { FinanceEventService } from "./finance/events.js";
 import { createRenderedDocumentRecord } from "./rendered-document.service.js";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import { CatalogService, CatalogServiceError } from "./catalog.service.js";
-import { NotificationTemplates } from "src/utils/notificationTemplates";
+import { NotificationTemplates } from "../utils/notificationTemplates.js";
 import { NotificationService } from "./notification.service.js";
 import { AuditTrailService } from "./audit-trail.service.js";
-import { sendEmailTemplate } from "src/utils/email";
-import logger from "src/utils/logger";
-import type { AuditEventType } from "src/models/audit-trail";
-import { resolvePaymentCollectionMethod } from "src/utils/payment";
-import { getOrgBillingCurrency } from "src/utils/billing";
-import { assertSafeString } from "src/utils/sanitize";
+import { sendEmailTemplate } from "../utils/email.js";
+import logger from "../utils/logger.js";
+import type { AuditEventType } from "../models/audit-trail.js";
+import { resolvePaymentCollectionMethod } from "../utils/payment.js";
+import { getOrgBillingCurrency } from "../utils/billing.js";
+import { assertSafeString } from "../utils/sanitize.js";
 import type Stripe from "stripe";
 
 export class InvoiceServiceError extends Error {

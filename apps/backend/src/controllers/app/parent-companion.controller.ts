@@ -4,9 +4,9 @@ import {
   ParentCompanionService,
   ParentCompanionServiceError,
 } from "../../services/parent-companion.service.js";
-import { ParentService } from "src/services/parent.service";
+import { ParentService } from "../../services/parent.service.js";
 import type { ParentCompanionPermissions } from "@yosemite-crew/types";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 
 const resolveAuthenticatedUserId = (req: Request): string | undefined => {
   const userId = (req as AuthenticatedRequest).userId;

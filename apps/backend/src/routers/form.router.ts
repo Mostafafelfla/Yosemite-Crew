@@ -1,12 +1,15 @@
 import { Router } from "express";
-import { FormController } from "src/controllers/web/form.controller";
-import { FormSigningController } from "src/controllers/web/formSigning.contorller";
-import { authorizeCognitoMobile, authorizeCognito } from "src/middlewares/auth";
+import { FormController } from "../controllers/web/form.controller.js";
+import { FormSigningController } from "../controllers/web/formSigning.contorller.js";
+import {
+  authorizeCognitoMobile,
+  authorizeCognito,
+} from "../middlewares/auth.js";
 import {
   withOrgPermissions,
   withAppointmentOrgPermissions,
   requirePermission,
-} from "src/middlewares/rbac";
+} from "../middlewares/rbac.js";
 
 const router = Router();
 

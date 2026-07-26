@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { AuthenticatedRequest } from "src/middlewares/auth";
-import { OrgRequest } from "src/middlewares/rbac";
-import { generatePresignedUrl } from "src/middlewares/upload";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
 import {
   InventoryService,
   InventoryAdjustmentService,
@@ -18,14 +18,14 @@ import {
   InventoryBatchInput,
   ConsumeStockInput,
   BulkConsumeStockInput,
-} from "src/services/inventory.service";
-import type { InventoryStockStatus } from "src/services/inventory.catalog";
+} from "../../services/inventory.service.js";
+import type { InventoryStockStatus } from "../../services/inventory.catalog.js";
 import {
   InventoryItemDocument,
   InventoryBatchDocument,
   InventoryVendorDocument,
-} from "src/models/inventory";
-import logger from "src/utils/logger";
+} from "../../models/inventory.js";
+import logger from "../../utils/logger.js";
 
 type EmptyParams = Record<string, never>;
 
@@ -277,9 +277,7 @@ export const InventoryController = {
         search,
         status: parsedStatus,
         stockStatus: parsedStockStatus as
-          | InventoryStockStatus
-          | InventoryStockStatus[]
-          | undefined,
+          InventoryStockStatus | InventoryStockStatus[] | undefined,
         lowStockOnly: lowStockOnly === "true",
         expiredOnly: expiredOnly === "true",
         expiringWithinDays: expiringWithinDays
@@ -630,7 +628,7 @@ export const InventoryVendorController = {
       }>
     >,
     res: Response,
-    ): Promise<void> => {
+  ): Promise<void> => {
     try {
       const { vendorId } = req.params;
       const { organisationId } = req as OrgRequest;
@@ -662,7 +660,7 @@ export const InventoryVendorController = {
   getVendor: async (
     req: Request<{ vendorId: string }>,
     res: Response,
-    ): Promise<void> => {
+  ): Promise<void> => {
     try {
       const { vendorId } = req.params;
       const { organisationId } = req as OrgRequest;

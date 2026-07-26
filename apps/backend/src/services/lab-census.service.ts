@@ -1,10 +1,10 @@
-import { normalizeLabProvider } from "src/labs";
-import { LabOrderServiceError } from "src/services/lab-order.service";
-import { prisma } from "src/config/prisma";
+import { normalizeLabProvider } from "../labs/index.js";
+import { LabOrderServiceError } from "./lab-order.service.js";
+import { prisma } from "../config/prisma.js";
 import {
   buildIdexxClient,
   lookupIdexxMapping,
-} from "src/labs/idexx/idexx.shared";
+} from "../labs/idexx/idexx.shared.js";
 
 const resolveGenderCode = (gender: string, isNeutered?: boolean) => {
   if (gender === "male") {

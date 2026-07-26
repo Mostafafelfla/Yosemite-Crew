@@ -1,4 +1,4 @@
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 import { AppointmentQueue, AppointmentJobs } from "./appointment.queue.js";
 
 export async function registerAppointmentSchedulers() {

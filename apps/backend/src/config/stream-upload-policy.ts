@@ -1,6 +1,6 @@
 // src/config/stream-upload-policy.ts
 import { StreamChat } from "stream-chat";
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 
 /**
  * File extensions that can carry executable or browser-active content. These are

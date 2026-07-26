@@ -1,7 +1,7 @@
 import { Worker } from "bullmq";
 import { redisConnection } from "../queues/bull.config.js";
 import { TaskRecurrenceEngine } from "../services/task.recurrence.engine.js";
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 
 export const TaskRecurrenceWorker = new Worker(
   "task-recurrence",

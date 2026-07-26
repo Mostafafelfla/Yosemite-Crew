@@ -1,6 +1,6 @@
 import IntegrationAccountModel, {
   IntegrationAccountDocument,
-} from "src/models/integration-account";
+} from "../models/integration-account.js";
 import {
   getIntegrationAdapter,
   normalizeProvider,
@@ -8,14 +8,14 @@ import {
   type IntegrationCredentials,
   type IntegrationProvider,
   type IntegrationValidationResult,
-} from "src/integrations";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+} from "../integrations/index.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import {
   Prisma,
   type IntegrationAccount as PrismaIntegrationAccount,
 } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 const prismaIntegrationAccountSelect = {
   id: true,

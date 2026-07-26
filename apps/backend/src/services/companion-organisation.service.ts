@@ -6,8 +6,8 @@ import {
   Prisma,
 } from "@prisma/client";
 import type { PatientOrganisation } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { assertSafeString } from "src/utils/sanitize";
+import { prisma } from "../config/prisma.js";
+import { assertSafeString } from "../utils/sanitize.js";
 import { AuditTrailService } from "./audit-trail.service.js";
 import { toFHIRFromPrisma as toFHIRCompanionFromPrisma } from "./companion.service.js";
 import { toFHIRFromPrisma as toFHIRParentFromPrisma } from "./parent.service.js";

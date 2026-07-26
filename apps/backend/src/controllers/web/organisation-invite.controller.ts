@@ -7,7 +7,7 @@ import {
   type CreateInvitePayload,
 } from "../../services/organisation-invite.service.js";
 import type { AuthenticatedRequest } from "../../middlewares/auth.js";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 type CreateInviteBody = Omit<
   CreateInvitePayload,

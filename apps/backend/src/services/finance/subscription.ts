@@ -1,5 +1,5 @@
 import { Prisma, BillingInterval, SubscriptionStatus } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma.js";
 import Stripe from "stripe";
 import { FinanceEventService } from "./events.js";
 

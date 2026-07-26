@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import { NotificationService } from "src/services/notification.service";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import { NotificationService } from "../../services/notification.service.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 export const NotificationController = {
   // List notifications for current user

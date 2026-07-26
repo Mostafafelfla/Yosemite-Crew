@@ -5,9 +5,9 @@ import {
   UserProfileServiceError,
   type CreateUserProfilePayload,
 } from "../../services/user-profile.service.js";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
-import { generatePresignedUrl } from "src/middlewares/upload";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 function ensurePlainObjectBody(
   body: unknown,

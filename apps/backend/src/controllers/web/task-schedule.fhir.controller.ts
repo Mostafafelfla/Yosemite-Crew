@@ -4,13 +4,13 @@ import { z } from "zod";
 import {
   TaskWorkflowService,
   TaskWorkflowServiceError,
-} from "src/services/task-workflow.service";
+} from "../../services/task-workflow.service.js";
 import {
   taskScheduleFhirMapper,
   type TaskScheduleLike,
-} from "src/services/task-schedule.fhir.mapper";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/task-schedule.fhir.mapper.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const parametersSchema = z
   .object({ resourceType: z.literal("Parameters") })

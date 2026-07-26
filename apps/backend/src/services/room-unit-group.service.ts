@@ -1,5 +1,5 @@
 import { type RoomType } from "@yosemite-crew/database";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import type { RoomUnitGroup } from "@yosemite-crew/types";
 import {
   normalizeStrictStringList,

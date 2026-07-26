@@ -4,7 +4,7 @@ import { chromium } from "playwright";
 import {
   resolveDocumentPdfTemplate,
   type DocumentPdfTemplateKind,
-} from "src/services/document-pdf-template-registry.service";
+} from "./document-pdf-template-registry.service.js";
 
 export interface PdfField {
   label: string;

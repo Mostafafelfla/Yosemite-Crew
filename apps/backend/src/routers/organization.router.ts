@@ -1,10 +1,13 @@
 import { Router } from "express";
 import { OrganizationController } from "../controllers/web/organization.controller.js";
-import { SpecialityController } from "src/controllers/web/speciality.controller";
+import { SpecialityController } from "../controllers/web/speciality.controller.js";
 import { OrganisationInviteController } from "../controllers/web/organisation-invite.controller.js";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
-import { CatalogController } from "src/controllers/web/catalog.controller";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { withOrgPermissions, requirePermission } from "../middlewares/rbac.js";
+import { CatalogController } from "../controllers/web/catalog.controller.js";
 
 const router = Router();
 

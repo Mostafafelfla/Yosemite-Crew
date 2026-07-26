@@ -1,7 +1,7 @@
 import { Worker } from "bullmq";
-import { redisConnection } from "src/queues/bull.config";
-import { LabStatusService } from "src/services/lab-status.service";
-import logger from "src/utils/logger";
+import { redisConnection } from "../queues/bull.config.js";
+import { LabStatusService } from "../services/lab-status.service.js";
+import logger from "../utils/logger.js";
 
 export const LabStatusWorker = new Worker(
   "lab-status",

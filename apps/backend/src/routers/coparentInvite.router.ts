@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { CoParentInviteController } from "src/controllers/app/coparentInvite.controller";
-import { authorizeCognitoMobile } from "src/middlewares/auth";
+import { CoParentInviteController } from "../controllers/app/coparentInvite.controller.js";
+import { authorizeCognitoMobile } from "../middlewares/auth.js";
 
 const router = Router();
 

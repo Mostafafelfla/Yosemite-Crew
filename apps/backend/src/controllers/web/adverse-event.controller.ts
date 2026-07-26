@@ -8,11 +8,11 @@ import {
   AdverseEventService,
   AdverseEventServiceError,
 } from "../../services/adverse-event.service.js";
-import logger from "src/utils/logger";
-import { RegulatoryAuthorityModel } from "src/models/regulatory-authority";
+import logger from "../../utils/logger.js";
+import { RegulatoryAuthorityModel } from "../../models/regulatory-authority.js";
 import escapeStringRegexp from "escape-string-regexp";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { prisma } from "../../config/prisma.js";
+import { isReadFromPostgres } from "../../config/read-switch.js";
 
 export const AdverseEventController = {
   createFromMobile: async (

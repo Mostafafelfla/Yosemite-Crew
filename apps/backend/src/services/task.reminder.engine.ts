@@ -4,9 +4,9 @@ import utc from "dayjs/plugin/utc.js";
 import timezone from "dayjs/plugin/timezone.js";
 
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { NotificationService } from "src/services/notification.service";
-import { NotificationTemplates } from "src/utils/notificationTemplates";
+import { prisma } from "../config/prisma.js";
+import { NotificationService } from "./notification.service.js";
+import { NotificationTemplates } from "../utils/notificationTemplates.js";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);

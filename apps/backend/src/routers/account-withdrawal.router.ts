@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { AccountWithdrawalController } from "../controllers/app/account-withdrawals.controller.js";
-import { authorizeCognitoMobile } from "src/middlewares/auth";
+import { authorizeCognitoMobile } from "../middlewares/auth.js";
 
 const router = Router();
 

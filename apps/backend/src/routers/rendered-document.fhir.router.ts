@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { RenderedDocumentFhirController } from "src/controllers/web/rendered-document.fhir.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { RenderedDocumentFhirController } from "../controllers/web/rendered-document.fhir.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

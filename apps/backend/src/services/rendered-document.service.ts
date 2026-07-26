@@ -24,10 +24,10 @@ import {
   type SignRenderedDocumentInput,
 } from "@yosemite-crew/types";
 import type { ClinicalPdfSignaturePlacement } from "@yosemite-crew/lib";
-import { prisma } from "src/config/prisma";
-import { uploadBufferAsFile } from "src/middlewares/upload";
-import { DocumensoService } from "src/services/documenso.service";
-import { renderRenderedDocumentPdfWithMetadata } from "src/services/rendered-document-renderer.service";
+import { prisma } from "../config/prisma.js";
+import { uploadBufferAsFile } from "../middlewares/upload.js";
+import { DocumensoService } from "./documenso.service.js";
+import { renderRenderedDocumentPdfWithMetadata } from "./rendered-document-renderer.service.js";
 
 export class RenderedDocumentServiceError extends Error {
   constructor(

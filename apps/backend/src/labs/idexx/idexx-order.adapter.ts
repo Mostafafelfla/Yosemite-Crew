@@ -1,15 +1,12 @@
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma.js";
 import type {
   LabOrderAdapter,
   LabOrderCreateInput,
   LabOrderCreateResult,
 } from "../types.js";
-import { LabOrderServiceError } from "src/services/lab-order.service";
-import { normalizeLabStatus } from "src/labs/status";
-import {
-  buildIdexxClient,
-  lookupIdexxMapping,
-} from "src/labs/idexx/idexx.shared";
+import { LabOrderServiceError } from "../../services/lab-order.service.js";
+import { normalizeLabStatus } from "../status.js";
+import { buildIdexxClient, lookupIdexxMapping } from "./idexx.shared.js";
 
 const coerceString = (value: unknown): string | null => {
   if (typeof value === "string") return value;

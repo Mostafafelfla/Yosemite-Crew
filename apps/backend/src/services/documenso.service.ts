@@ -3,10 +3,10 @@ import * as errors from "@documenso/sdk-typescript/models/errors/index.js";
 import axios from "axios";
 import type { ClinicalPdfSignaturePlacement } from "@yosemite-crew/lib";
 import { Types } from "mongoose";
-import OrganizationModel from "src/models/organization";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import logger from "src/utils/logger";
+import OrganizationModel from "../models/organization.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import logger from "../utils/logger.js";
 
 // Replace with your self-hosted instance's URL, e.g., https://your-documenso-domain.com
 const BASE_URL = process.env["DOCUMENSO_BASE_URL"] ?? "";

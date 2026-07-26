@@ -1,5 +1,5 @@
 import { Prisma, TaskLibrarySpecies } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 
 export class TaskLibraryServiceError extends Error {
   constructor(

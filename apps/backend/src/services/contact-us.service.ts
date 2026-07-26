@@ -9,8 +9,8 @@ import ContactRequestModel, {
 } from "../models/contect-us.js";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../config/prisma.js";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 
 export class ContactServiceError extends Error {
   constructor(

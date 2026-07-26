@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { OrgRequest } from "src/middlewares/rbac";
-import logger from "src/utils/logger";
-import { LabCensusService } from "src/services/lab-census.service";
-import { LabOrderServiceError } from "src/services/lab-order.service";
-import { mapAxiosError } from "src/utils/external-error";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import logger from "../../utils/logger.js";
+import { LabCensusService } from "../../services/lab-census.service.js";
+import { LabOrderServiceError } from "../../services/lab-order.service.js";
+import { mapAxiosError } from "../../utils/external-error.js";
 
 const resolveOrganisationId = (req: Request): string | undefined => {
   const orgReq = req as OrgRequest;

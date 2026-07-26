@@ -3,15 +3,15 @@ import CodeEntryModel, {
   type CodeEntryMongo,
   type CodeSystem,
   type CodeType,
-} from "src/models/code-entry";
+} from "../models/code-entry.js";
 import CodeMappingModel, {
   type CodeMappingDocument,
   type CodeMappingMongo,
-} from "src/models/code-mapping";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+} from "../models/code-mapping.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { Prisma } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export class CodeServiceError extends Error {
   constructor(

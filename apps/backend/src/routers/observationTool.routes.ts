@@ -1,15 +1,18 @@
 import { Router } from "express";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
 import {
   requirePermission,
   withAppointmentOrgPermissions,
   withOrgPermissions,
   withTaskOrgPermissions,
-} from "src/middlewares/rbac";
+} from "../middlewares/rbac.js";
 import {
   ObservationToolDefinitionController,
   ObservationToolSubmissionController,
-} from "src/controllers/web/observationTool.controller";
+} from "../controllers/web/observationTool.controller.js";
 
 const router = Router();
 

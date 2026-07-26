@@ -1,4 +1,4 @@
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 import { LabResultsQueue } from "./lab-results.queue.js";
 
 const FIVE_MIN_MS = 5 * 60 * 1000;

@@ -1,9 +1,12 @@
 import { Prisma, type LabOrder, type LabOrderStatus } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { getLabOrderAdapter, normalizeLabProvider } from "src/labs";
-import type { LabOrderCreateInput, LabOrderUpdateInput } from "src/labs";
-import logger from "src/utils/logger";
-import { InvoiceService } from "src/services/invoice.service";
+import { prisma } from "../config/prisma.js";
+import { getLabOrderAdapter, normalizeLabProvider } from "../labs/index.js";
+import type {
+  LabOrderCreateInput,
+  LabOrderUpdateInput,
+} from "../labs/index.js";
+import logger from "../utils/logger.js";
+import { InvoiceService } from "./invoice.service.js";
 import type { InvoiceItem } from "@yosemite-crew/types";
 
 export class LabOrderServiceError extends Error {

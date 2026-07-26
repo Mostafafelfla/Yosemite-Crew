@@ -7,13 +7,13 @@ import {
   RoleCode,
 } from "../models/role-permission.js";
 import { AuthenticatedRequest } from "./auth.js";
-import UserOrganizationModel from "src/models/user-organization";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import AppointmentModel from "src/models/appointment";
-import InvoiceModel from "src/models/invoice";
-import TaskModel from "src/models/task";
-import { InventoryItemModel } from "src/models/inventory";
+import UserOrganizationModel from "../models/user-organization.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import AppointmentModel from "../models/appointment.js";
+import InvoiceModel from "../models/invoice.js";
+import TaskModel from "../models/task.js";
+import { InventoryItemModel } from "../models/inventory.js";
 
 export interface OrgRequest extends AuthenticatedRequest {
   userPermissions?: Permission[];

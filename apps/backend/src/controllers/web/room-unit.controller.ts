@@ -6,7 +6,7 @@ import {
 import {
   RoomUnitService,
   RoomUnitServiceError,
-} from "src/services/room-unit.service";
+} from "../../services/room-unit.service.js";
 import {
   getOrganisationId,
   handleError,

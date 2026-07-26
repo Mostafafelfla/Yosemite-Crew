@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { AuditEntityType, AuditEventType } from "src/models/audit-trail";
+import { AuditEntityType, AuditEventType } from "../../models/audit-trail.js";
 import {
   AuditTrailService,
   AuditTrailServiceError,
-} from "src/services/audit-trail.service";
-import logger from "src/utils/logger";
-import { OrgRequest } from "src/middlewares/rbac";
+} from "../../services/audit-trail.service.js";
+import logger from "../../utils/logger.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
 
 const parseListQuery = (payload: Record<string, unknown> | undefined) => {
   const limitRaw = payload?.limit;

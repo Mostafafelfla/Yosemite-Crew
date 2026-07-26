@@ -3,9 +3,9 @@ import { Request, Response } from "express";
 import {
   InvoiceService,
   InvoiceServiceError,
-} from "src/services/invoice.service";
-import logger from "src/utils/logger";
-import { OrgRequest } from "src/middlewares/rbac";
+} from "../../services/invoice.service.js";
+import logger from "../../utils/logger.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
 
 type AddChargesBody = {
   items?: unknown;

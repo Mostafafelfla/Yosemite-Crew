@@ -1,6 +1,9 @@
 import { Router } from "express";
-import { ContactController } from "src/controllers/app/contact-us.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
+import { ContactController } from "../controllers/app/contact-us.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
 
 const router = Router();
 

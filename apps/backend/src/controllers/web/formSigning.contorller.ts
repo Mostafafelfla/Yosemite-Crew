@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import { FormSigningService } from "src/services/formSigning.service";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
-import type { OrgRequest } from "src/middlewares/rbac";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import { FormSigningService } from "../../services/formSigning.service.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
+import type { OrgRequest } from "../../middlewares/rbac.js";
 
 export const FormSigningController = {
   startSigning: async (req: Request, res: Response) => {

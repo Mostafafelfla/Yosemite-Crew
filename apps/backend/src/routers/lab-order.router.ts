@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
-import { LabOrderController } from "src/controllers/web/lab-order.controller";
-import { LabCensusController } from "src/controllers/web/lab-census.controller";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
+import { LabOrderController } from "../controllers/web/lab-order.controller.js";
+import { LabCensusController } from "../controllers/web/lab-census.controller.js";
 
 const router = Router();
 

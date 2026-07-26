@@ -1,14 +1,14 @@
 // src/controllers/chat.controller.ts
 import { Request, Response } from "express";
-import { ChatService, ChatServiceError } from "src/services/chat.service";
-import { NetworkChatService } from "src/services/networkChat.service";
-import ChatSessionModel from "src/models/chatSession";
-import logger from "src/utils/logger";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import { SharedChatEntityService } from "src/services/sharedChatEntity.service";
+import { ChatService, ChatServiceError } from "../../services/chat.service.js";
+import { NetworkChatService } from "../../services/networkChat.service.js";
+import ChatSessionModel from "../../models/chatSession.js";
+import logger from "../../utils/logger.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import { prisma } from "../../config/prisma.js";
+import { isReadFromPostgres } from "../../config/read-switch.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import { SharedChatEntityService } from "../../services/sharedChatEntity.service.js";
 import { z } from "zod";
 
 const getObjectBody = (req: Request): Record<string, unknown> =>

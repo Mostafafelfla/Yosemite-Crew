@@ -9,7 +9,7 @@ import type {
   TaxBehavior as PrismaTaxBehavior,
 } from "@prisma/client";
 import Stripe from "stripe";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma.js";
 import { FinanceEventService } from "./events.js";
 import { roundMoney } from "./pricing.js";
 

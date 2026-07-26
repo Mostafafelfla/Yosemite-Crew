@@ -8,10 +8,10 @@ import { z } from "zod";
 import {
   ClinicalArtifactService,
   ClinicalArtifactServiceError,
-} from "src/services/clinical-artifact.service";
-import { clinicalArtifactFhirMapper } from "src/services/fhir-clinical-artifact.mapper";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/clinical-artifact.service.js";
+import { clinicalArtifactFhirMapper } from "../../services/fhir-clinical-artifact.mapper.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const compositionSchema = z
   .object({ resourceType: z.literal("Composition") })

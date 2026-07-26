@@ -1,4 +1,4 @@
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 
 export class LabResultServiceError extends Error {
   constructor(

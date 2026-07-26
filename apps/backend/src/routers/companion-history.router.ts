@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { authorizeCognito } from "src/middlewares/auth";
-import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
-import { CompanionHistoryController } from "src/controllers/web/companion-history.controller";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { withOrgPermissions, requirePermission } from "../middlewares/rbac.js";
+import { CompanionHistoryController } from "../controllers/web/companion-history.controller.js";
 
 const router = Router();
 

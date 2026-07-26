@@ -1,7 +1,7 @@
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { ParentModel } from "src/models/parent";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { ParentModel } from "../models/parent.js";
+import { AuthUserMobileService } from "../services/authUserMobile.service.js";
 
 type ParentAddress = {
   city?: string | null;

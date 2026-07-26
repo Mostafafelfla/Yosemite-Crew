@@ -3,14 +3,14 @@
 import dayjs from "dayjs";
 import { Types } from "mongoose";
 
-import AppointmentModel from "src/models/appointment";
-import TaskModel from "src/models/task";
-import { InventoryItemModel, StockMovementModel } from "src/models/inventory";
-import InvoiceModel from "src/models/invoice";
-import UserOrganizationModel from "src/models/user-organization";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { AvailabilityService } from "src/services/availability.service";
+import AppointmentModel from "../models/appointment.js";
+import TaskModel from "../models/task.js";
+import { InventoryItemModel, StockMovementModel } from "../models/inventory.js";
+import InvoiceModel from "../models/invoice.js";
+import UserOrganizationModel from "../models/user-organization.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { AvailabilityService } from "./availability.service.js";
 // ⬆️ adjust import paths/model names if needed
 
 export class DashboardServiceError extends Error {
@@ -27,10 +27,7 @@ export class DashboardServiceError extends Error {
  * Types for responses
  */
 export type DashboardRange =
-  | "last_week"
-  | "last_month"
-  | "last_6_months"
-  | "last_1_year";
+  "last_week" | "last_month" | "last_6_months" | "last_1_year";
 
 export type LegacyRange =
   | "today"

@@ -13,28 +13,28 @@ import {
 } from "@yosemite-crew/types";
 import OrganizationModel, {
   type OrganizationMongo,
-} from "src/models/organization";
+} from "../models/organization.js";
 import escapeStringRegexp from "escape-string-regexp";
-import SpecialityModel from "src/models/speciality";
-import { AvailabilitySlotMongo } from "src/models/base-availability";
+import SpecialityModel from "../models/speciality.js";
+import { AvailabilitySlotMongo } from "../models/base-availability.js";
 import { AvailabilityService } from "./availability.service.js";
-import helpers from "src/utils/helper";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import helpers from "../utils/helper.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { ServiceType } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
-import UserProfileModel from "src/models/user-profile";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import UserProfileModel from "../models/user-profile.js";
 import {
   addCachedPromise,
   type CachedPromise,
-} from "src/utils/cached-promise-cache";
+} from "../utils/cached-promise-cache.js";
 import {
   buildBookableWindowsForVets,
   mapOrganisationWithAddress,
   normalizeSlotForSelectedDay,
   resolveOrganisationTimezone,
-} from "src/utils/scheduling";
-import { filterWithinRadius, getBoundingDeltas } from "src/utils/geo";
+} from "../utils/scheduling.js";
+import { filterWithinRadius, getBoundingDeltas } from "../utils/geo.js";
 
 dayjs.extend(utc);
 

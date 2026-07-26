@@ -5,14 +5,14 @@ import {
   CompanionServiceError,
 } from "../../services/companion.service.js";
 import type { CompanionRequestDTO } from "@yosemite-crew/types";
-import { CompanionOrganisationService } from "src/services/companion-organisation.service";
-import OrganizationModel from "src/models/organization";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { CompanionOrganisationService } from "../../services/companion-organisation.service.js";
+import OrganizationModel from "../../models/organization.js";
+import { prisma } from "../../config/prisma.js";
+import { isReadFromPostgres } from "../../config/read-switch.js";
 import {
   resolveOrganisationIdFromRequest,
   resolveUserIdFromRequest,
-} from "src/utils/request";
+} from "../../utils/request.js";
 import { getProfileUploadUrl } from "./profile-upload.handler.js";
 
 type CompanionRequestBody =

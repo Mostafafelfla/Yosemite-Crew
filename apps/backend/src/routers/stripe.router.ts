@@ -1,8 +1,11 @@
 import { Router } from "express";
 import { StripeController } from "../controllers/web/stripe.controller.js";
 import bodyParser from "body-parser";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { withOrgPermissions, requirePermission } from "../middlewares/rbac.js";
 
 const router = Router();
 

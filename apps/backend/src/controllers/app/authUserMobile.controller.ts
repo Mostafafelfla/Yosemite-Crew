@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { AuthenticatedRequest } from "src/middlewares/auth";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import logger from "src/utils/logger";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import logger from "../../utils/logger.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 // Resolve UserID
 

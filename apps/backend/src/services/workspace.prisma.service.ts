@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import { ClinicalArtifactService } from "./clinical-artifact.service.js";
 import { FormAssignmentService } from "./form-assignment.service.js";
 import {

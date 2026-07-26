@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
-import { AvailabilityService } from "src/services/availability.service";
-import logger from "src/utils/logger";
-import { AvailabilitySlotMongo, DayOfWeek } from "src/models/base-availability";
-import { WeeklyOverrideDay } from "src/models/weekly-availablity-override";
-import type { OccupancyMongo } from "src/models/occupancy";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AvailabilityService } from "../../services/availability.service.js";
+import logger from "../../utils/logger.js";
+import {
+  AvailabilitySlotMongo,
+  DayOfWeek,
+} from "../../models/base-availability.js";
+import { WeeklyOverrideDay } from "../../models/weekly-availablity-override.js";
+import type { OccupancyMongo } from "../../models/occupancy.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 type NormalizedOccupancy = {
   startTime: Date;

@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { ParentService } from "src/services/parent.service";
+import { ParentService } from "../../services/parent.service.js";
 import {
   CoParentInviteService,
   CoParentInviteServiceError,
-} from "src/services/coparentInvite.service";
-import logger from "src/utils/logger";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+} from "../../services/coparentInvite.service.js";
+import logger from "../../utils/logger.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 
 type SendInviteBody = {
   email?: string;

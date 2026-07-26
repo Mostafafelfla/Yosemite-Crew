@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import logger from "../../utils/logger.js";
 import { UserService, UserServiceError } from "../../services/user.service.js";
-import { AuthenticatedRequest } from "src/middlewares/auth";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 type GetUserRequest = Request<{ id: string }>;
 type UpdateUserNameRequest = Request<

@@ -9,7 +9,7 @@ import {
   type MergedClinicalPacketPdf,
   type PacketDocumentPdfLoader,
 } from "@yosemite-crew/lib";
-import { getPersistedRenderedDocumentPdf } from "src/services/rendered-document.service";
+import { getPersistedRenderedDocumentPdf } from "./rendered-document.service.js";
 
 export {
   ClinicalPacketPdfError,

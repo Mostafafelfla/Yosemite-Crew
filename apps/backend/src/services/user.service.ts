@@ -2,7 +2,7 @@ import validator from "validator";
 import { User } from "@yosemite-crew/types";
 import { CognitoService } from "./cognito.service.js";
 import { OrganizationService } from "./organization.service.js";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 
 export class UserServiceError extends Error {
   constructor(

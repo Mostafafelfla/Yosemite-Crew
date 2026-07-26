@@ -1,4 +1,4 @@
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 import { TaskRecurrenceQueue, TaskReminderQueue } from "./task.queues.js";
 
 export async function registerTaskSchedulers() {

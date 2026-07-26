@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { OrgRequest } from "src/middlewares/rbac";
-import logger from "src/utils/logger";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import logger from "../../utils/logger.js";
 import {
   IntegrationService,
   IntegrationServiceError,
-} from "src/services/integration.service";
+} from "../../services/integration.service.js";
 
 const resolveOrganisationId = (req: Request): string | undefined => {
   const orgReq = req as OrgRequest;

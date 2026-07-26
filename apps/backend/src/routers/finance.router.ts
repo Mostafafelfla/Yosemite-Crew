@@ -1,6 +1,9 @@
 import { Router } from "express";
 import rateLimit from "express-rate-limit";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
 import {
   requirePermission,
   withOrgPermissions,
@@ -8,8 +11,8 @@ import {
   withInvoiceOrgPermissions,
   withPaymentOrgPermissions,
   withPaymentIntentOrgPermissions,
-} from "src/middlewares/rbac";
-import { FinanceController } from "src/controllers/app/finance.controller";
+} from "../middlewares/rbac.js";
+import { FinanceController } from "../controllers/app/finance.controller.js";
 
 const router = Router();
 

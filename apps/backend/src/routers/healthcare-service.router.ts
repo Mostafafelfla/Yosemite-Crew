@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
-import { CatalogController } from "src/controllers/web/catalog.controller";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
+import { CatalogController } from "../controllers/web/catalog.controller.js";
 
 const router = Router();
 

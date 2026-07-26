@@ -1,7 +1,7 @@
 import { Worker } from "bullmq";
 import { redisConnection } from "../queues/bull.config.js";
 import { TaskReminderEngine } from "../services/task.reminder.engine.js";
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 
 export const TaskReminderWorker = new Worker(
   "task-reminder",

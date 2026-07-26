@@ -1,7 +1,7 @@
 import { Response } from "express";
-import { MerckServiceError } from "src/services/merck.service";
-import { mapAxiosError } from "src/utils/external-error";
-import logger from "src/utils/logger";
+import { MerckServiceError } from "../../services/merck.service.js";
+import { mapAxiosError } from "../../utils/external-error.js";
+import logger from "../../utils/logger.js";
 
 type MerckResult = {
   meta?: Record<string, unknown>;

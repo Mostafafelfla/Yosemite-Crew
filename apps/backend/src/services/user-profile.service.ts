@@ -13,8 +13,8 @@ import {
   BaseAvailabilityService,
   BaseAvailabilityServiceError,
 } from "./base-availability.service.js";
-import { getURLForKey } from "src/middlewares/upload";
-import { prisma } from "src/config/prisma";
+import { getURLForKey } from "../middlewares/upload.js";
+import { prisma } from "../config/prisma.js";
 import { Prisma } from "@prisma/client";
 
 export class UserProfileServiceError extends Error {

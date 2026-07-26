@@ -6,10 +6,10 @@ import {
   DocumentService,
   DocumentServiceError,
 } from "../../services/document.service.js";
-import { generatePresignedUrl } from "src/middlewares/upload";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import { OrgRequest } from "src/middlewares/rbac";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 type MobileUploadUrlBody = {
   patientId?: string;

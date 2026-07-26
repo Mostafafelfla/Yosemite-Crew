@@ -5,12 +5,12 @@ import {
   ParentServiceError,
 } from "../../services/parent.service.js";
 import type { ParentRequestDTO } from "@yosemite-crew/types";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 import { getProfileUploadUrl } from "./profile-upload.handler.js";
 import {
   resolveOrganisationIdFromRequest,
   resolveUserIdFromRequest,
-} from "src/utils/request";
+} from "../../utils/request.js";
 
 // Payload checker
 type ParentRequestBody = ParentRequestDTO | { payload?: unknown } | undefined;

@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import { CatalogService, CatalogServiceError } from "./catalog.service.js";
 import { AuditTrailService } from "./audit-trail.service.js";
 import { WorkspaceService } from "./workspace.prisma.service.js";

@@ -14,13 +14,13 @@ import { z } from "zod";
 import {
   TemplateService,
   TemplateServiceError,
-} from "src/services/template.service";
+} from "../../services/template.service.js";
 import {
   templateMapper,
   type TemplateLike,
-} from "src/services/fhir-template.mapper";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/fhir-template.mapper.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const questionnaireResourceSchema = z
   .object({ resourceType: z.literal("Questionnaire") })

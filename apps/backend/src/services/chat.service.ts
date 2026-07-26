@@ -18,9 +18,9 @@ import {
   ChatSessionStatus,
   ChatSessionType as PrismaChatSessionType,
 } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 const STREAM_KEY = process.env.STREAM_API_KEY!;
 const STREAM_SECRET = process.env.STREAM_API_SECRET!;

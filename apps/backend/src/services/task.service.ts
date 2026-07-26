@@ -6,7 +6,7 @@ import {
   TaskStatus as PrismaTaskStatus,
 } from "@prisma/client";
 import { isTaskCategory } from "@yosemite-crew/types";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import { AuditTrailService } from "./audit-trail.service.js";
 import type { TaskWorkflowSeed } from "./task-workflow-materializer.js";
 import { sendEmailTemplate } from "../utils/email.js";

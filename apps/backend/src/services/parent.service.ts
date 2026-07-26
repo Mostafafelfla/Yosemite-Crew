@@ -5,11 +5,11 @@ import {
   type Parent,
 } from "@yosemite-crew/types";
 import { ParentCreatedFrom, Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import { AuditTrailService } from "./audit-trail.service.js";
 import { AuthUserMobileService } from "./authUserMobile.service.js";
-import { buildS3Key, moveFile } from "src/middlewares/upload";
-import logger from "src/utils/logger";
+import { buildS3Key, moveFile } from "../middlewares/upload.js";
+import logger from "../utils/logger.js";
 import escapeStringRegexp from "escape-string-regexp";
 
 export class ParentServiceError extends Error {

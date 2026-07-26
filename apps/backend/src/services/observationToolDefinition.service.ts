@@ -4,11 +4,11 @@ import {
   ObservationToolDefinitionDocument,
   OTField,
   OTFieldType,
-} from "src/models/observationToolDefinition";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+} from "../models/observationToolDefinition.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { Prisma } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export class ObservationToolDefinitionServiceError extends Error {
   constructor(

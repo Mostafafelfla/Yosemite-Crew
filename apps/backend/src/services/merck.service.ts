@@ -1,8 +1,8 @@
 import axios from "axios";
-import { MerckHealthlinkClient } from "src/integrations/merck/merck.client";
-import { IntegrationService } from "src/services/integration.service";
-import logger from "src/utils/logger";
-import { toSafeErrorLog } from "src/utils/safe-error-log";
+import { MerckHealthlinkClient } from "../integrations/merck/merck.client.js";
+import { IntegrationService } from "./integration.service.js";
+import logger from "../utils/logger.js";
+import { toSafeErrorLog } from "../utils/safe-error-log.js";
 
 type MerckAudience = "PROV" | "PAT";
 type MerckLanguage = "en" | "es";
@@ -410,16 +410,12 @@ const normalizeFromFeedObject = (
   const feed = (payload as { feed?: Record<string, unknown> })?.feed ?? {};
   const entryNodes = ensureArray(
     (feed as { entry?: unknown }).entry as
-      | Array<Record<string, unknown>>
-      | Record<string, unknown>
-      | undefined,
+      Array<Record<string, unknown>> | Record<string, unknown> | undefined,
   );
 
   const categories = ensureArray(
     (feed as { category?: unknown }).category as
-      | Array<Record<string, string>>
-      | Record<string, string>
-      | undefined,
+      Array<Record<string, string>> | Record<string, string> | undefined,
   );
   const recipient = categories.find(
     (category) =>

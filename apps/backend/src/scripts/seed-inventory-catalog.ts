@@ -1,6 +1,6 @@
 import "dotenv/config";
-import { prisma } from "src/config/prisma";
-import { INVENTORY_CATEGORY_SEED } from "src/services/inventory.catalog";
+import { prisma } from "../config/prisma.js";
+import { INVENTORY_CATEGORY_SEED } from "../services/inventory.catalog.js";
 
 const main = async () => {
   for (const category of INVENTORY_CATEGORY_SEED) {

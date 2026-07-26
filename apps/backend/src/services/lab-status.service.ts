@@ -1,6 +1,6 @@
-import { LabOrderService } from "src/services/lab-order.service";
-import logger from "src/utils/logger";
-import { prisma } from "src/config/prisma";
+import { LabOrderService } from "./lab-order.service.js";
+import logger from "../utils/logger.js";
+import { prisma } from "../config/prisma.js";
 import type { LabOrderStatus } from "@prisma/client";
 
 const TERMINAL_STATUSES: LabOrderStatus[] = ["COMPLETE", "CANCELLED", "ERROR"];

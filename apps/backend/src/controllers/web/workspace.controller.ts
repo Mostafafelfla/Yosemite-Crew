@@ -3,12 +3,12 @@ import { z } from "zod";
 import {
   WorkspaceService,
   WorkspaceServiceError,
-} from "src/services/workspace.prisma.service";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import { WorkspaceDocumentPacketService } from "src/services/workspace-document-packet.service";
-import logger from "src/utils/logger";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import type { OrgRequest } from "src/middlewares/rbac";
+} from "../../services/workspace.prisma.service.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import { WorkspaceDocumentPacketService } from "../../services/workspace-document-packet.service.js";
+import logger from "../../utils/logger.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import type { OrgRequest } from "../../middlewares/rbac.js";
 
 const appointmentParamsSchema = z.object({
   organisationId: z.string().min(1),

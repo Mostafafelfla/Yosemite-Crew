@@ -1,9 +1,9 @@
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   deleteFromS3,
   generatePresignedDownloadUrl,
-} from "src/middlewares/upload";
-import { assertSafeString } from "src/utils/sanitize";
+} from "../middlewares/upload.js";
+import { assertSafeString } from "../utils/sanitize.js";
 import { AuditTrailService } from "./audit-trail.service.js";
 
 export class DocumentServiceError extends Error {

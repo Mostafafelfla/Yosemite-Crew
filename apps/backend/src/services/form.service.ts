@@ -6,7 +6,7 @@ import {
   FormSubmissionModel,
   FormSubmissionDocument,
   IFormVersionDocument,
-} from "src/models/form";
+} from "../models/form.js";
 
 import {
   Form,
@@ -22,15 +22,15 @@ import {
   templateSchemaToFormFields,
   type TemplateLike,
 } from "@yosemite-crew/types";
-import { templateMapper } from "src/services/fhir-template.mapper";
+import { templateMapper } from "./fhir-template.mapper.js";
 import { buildPdfViewModel, renderPdf } from "./formPDF.service.js";
-import { FormAssignmentService } from "src/services/form-assignment.service";
-import logger from "src/utils/logger";
-import AppointmentModel from "src/models/appointment";
-import OrganizationModel from "src/models/organization";
+import { FormAssignmentService } from "./form-assignment.service.js";
+import logger from "../utils/logger.js";
+import AppointmentModel from "../models/appointment.js";
+import OrganizationModel from "../models/organization.js";
 import { DocumensoService } from "./documenso.service.js";
 import { AuditTrailService } from "./audit-trail.service.js";
-import UserModel from "src/models/user";
+import UserModel from "../models/user.js";
 import {
   FormRequiredSigner as PrismaFormRequiredSigner,
   FormStatus as PrismaFormStatus,
@@ -38,10 +38,10 @@ import {
   OrganizationType as PrismaOrganizationType,
   Prisma,
 } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { TemplateService } from "src/services/template.service";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { TemplateService } from "./template.service.js";
 
 export class FormServiceError extends Error {
   constructor(

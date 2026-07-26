@@ -15,16 +15,16 @@ import {
   RecordStatus as PrismaRecordStatus,
   SourceType as PrismaSourceType,
 } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   ParentCompanionService,
   ParentCompanionServiceError,
 } from "./parent-companion.service.js";
 import { AuditTrailService } from "./audit-trail.service.js";
 import { ParentService } from "./parent.service.js";
-import { buildS3Key, moveFile } from "src/middlewares/upload";
+import { buildS3Key, moveFile } from "../middlewares/upload.js";
 import escapeStringRegexp from "escape-string-regexp";
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 import { TaskLibraryService } from "./taskLibrary.service.js";
 import { CreateFromLibraryInput, TaskService } from "./task.service.js";
 

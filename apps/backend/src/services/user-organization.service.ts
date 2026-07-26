@@ -8,13 +8,13 @@ import {
   type UserOrganizationResponseDTO,
   type UserOrganization,
 } from "@yosemite-crew/types";
-import { ROLE_PERMISSIONS, RoleCode } from "src/models/role-permission";
+import { ROLE_PERMISSIONS, RoleCode } from "../models/role-permission.js";
 import { AvailabilityService } from "./availability.service.js";
 import { StripeService } from "./stripe.service.js";
-import { sendFreePlanLimitReachedEmail } from "src/utils/org-usage-notifications";
-import { sendEmailTemplate } from "src/utils/email";
-import logger from "src/utils/logger";
-import { prisma } from "src/config/prisma";
+import { sendFreePlanLimitReachedEmail } from "../utils/org-usage-notifications.js";
+import { sendEmailTemplate } from "../utils/email.js";
+import logger from "../utils/logger.js";
+import { prisma } from "../config/prisma.js";
 import type { UserOrganization as PrismaUserOrganization } from "@prisma/client";
 
 export type UserOrganizationFHIRPayload = UserOrganizationRequestDTO;

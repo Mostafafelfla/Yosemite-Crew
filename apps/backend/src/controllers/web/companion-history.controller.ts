@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import logger from "src/utils/logger";
+import logger from "../../utils/logger.js";
 import {
   CompanionHistoryService,
   CompanionHistoryServiceError,
   type HistoryEntryType,
-} from "src/services/companion-history.service";
-import { OrgRequest } from "src/middlewares/rbac";
+} from "../../services/companion-history.service.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
 
 const LAB_VIEW_PERMISSION = "labs:view:any" as const;
 const DEFAULT_HISTORY_TYPES: HistoryEntryType[] = [

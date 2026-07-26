@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma.js";
 
 export type FinanceEventInput = {
   organisationId?: string | null;

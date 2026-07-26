@@ -7,11 +7,11 @@ import logger from "../utils/logger.js";
 import { InvoiceService } from "./invoice.service.js";
 import { FinancePaymentService } from "./finance/payment.js";
 import { FinanceSubscriptionService } from "./finance/subscription.js";
-import { NotificationTemplates } from "src/utils/notificationTemplates";
+import { NotificationTemplates } from "../utils/notificationTemplates.js";
 import { NotificationService } from "./notification.service.js";
 
-import { prisma } from "src/config/prisma";
-import { getOrgBillingCurrency } from "src/utils/billing";
+import { prisma } from "../config/prisma.js";
+import { getOrgBillingCurrency } from "../utils/billing.js";
 import { Prisma } from "@prisma/client";
 
 let stripeClient: Stripe | null = null;

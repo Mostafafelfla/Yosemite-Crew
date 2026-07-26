@@ -1,5 +1,5 @@
 import { AppointmentKind, Prisma, TemplateKind } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   materializeTaskWorkflowSeeds,
   type TaskWorkflowSeed,

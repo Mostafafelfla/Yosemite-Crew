@@ -1,7 +1,7 @@
 import { Worker } from "bullmq";
-import { redisConnection } from "src/queues/bull.config";
-import { IdexxReferenceService } from "src/services/idexx-reference.service";
-import logger from "src/utils/logger";
+import { redisConnection } from "../queues/bull.config.js";
+import { IdexxReferenceService } from "../services/idexx-reference.service.js";
+import logger from "../utils/logger.js";
 
 export const IdexxReferenceWorker = new Worker(
   "idexx-reference",

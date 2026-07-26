@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
-import { SearchController } from "src/controllers/web/search.controller";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
+import { SearchController } from "../controllers/web/search.controller.js";
 
 const router = Router();
 

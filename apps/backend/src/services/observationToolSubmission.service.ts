@@ -1,19 +1,19 @@
 import { Types } from "mongoose";
-import AppointmentModel from "src/models/appointment";
-import CompanionOrganisationModel from "src/models/companion-organisation";
-import TaskModel from "src/models/task";
-import { TaskService } from "src/services/task.service";
+import AppointmentModel from "../models/appointment.js";
+import CompanionOrganisationModel from "../models/companion-organisation.js";
+import TaskModel from "../models/task.js";
+import { TaskService } from "./task.service.js";
 import {
   ObservationToolDefinitionModel,
   ObservationToolSubmissionModel,
   ObservationToolSubmissionDocument,
   ObservationToolDefinitionDocument,
   ObservationToolAnswers,
-} from "src/models/observationToolDefinition";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+} from "../models/observationToolDefinition.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { Prisma } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export class ObservationToolSubmissionServiceError extends Error {
   constructor(
@@ -891,8 +891,7 @@ export const ObservationToolSubmissionService = {
       });
 
       const submissionAnswers = submission?.answers as
-        | ObservationToolAnswers
-        | undefined;
+        ObservationToolAnswers | undefined;
 
       const toolFields =
         tool.fields as unknown as ObservationToolDefinitionDocument["fields"];
@@ -955,8 +954,7 @@ export const ObservationToolSubmissionService = {
 
     // small preview: only include answers for first N fields (frontend can expand later)
     const submissionAnswers = submission?.answers as
-      | ObservationToolAnswers
-      | undefined;
+      ObservationToolAnswers | undefined;
 
     const answersPreview =
       submissionAnswers && tool.fields.length

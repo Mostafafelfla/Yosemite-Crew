@@ -1,8 +1,8 @@
-import { IdexxClient } from "src/integrations/idexx/idexx.client";
-import { CodeService } from "src/services/code.service";
-import { CodeSyncService } from "src/services/code-sync.service";
-import type { CodeSyncKind } from "src/services/code-sync.service";
-import logger from "src/utils/logger";
+import { IdexxClient } from "../integrations/idexx/idexx.client.js";
+import { CodeService } from "./code.service.js";
+import { CodeSyncService } from "./code-sync.service.js";
+import type { CodeSyncKind } from "./code-sync.service.js";
+import logger from "../utils/logger.js";
 
 const SPECIES_ALLOWED = new Set(["canine", "feline", "equine"]);
 

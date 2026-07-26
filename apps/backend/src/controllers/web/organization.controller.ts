@@ -6,11 +6,11 @@ import {
   OrganizationServiceError,
   type OrganizationFHIRPayload,
 } from "../../services/organization.service.js";
-import { generatePresignedUrl } from "src/middlewares/upload";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
 import { stringify } from "node:querystring";
-import helpers from "src/utils/helper";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import { getParentAddressForAuthUser } from "src/utils/location";
+import helpers from "../../utils/helper.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import { getParentAddressForAuthUser } from "../../utils/location.js";
 
 const isOrganizationPayload = (
   payload: unknown,

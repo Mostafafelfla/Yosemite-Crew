@@ -20,13 +20,13 @@ import {
 } from "@prisma/client";
 import { prisma } from "../config/prisma.js";
 import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 import {
   UserOrganizationService,
   UserOrganizationServiceError,
 } from "./user-organization.service.js";
 import { sendEmailTemplate } from "../utils/email.js";
-import UserModel from "src/models/user";
+import UserModel from "../models/user.js";
 import { randomBytes } from "node:crypto";
 
 const IDENTIFIER_PATTERN = /^[A-Za-z0-9\-.]{1,64}$/;

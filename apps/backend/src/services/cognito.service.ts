@@ -2,7 +2,7 @@ import {
   CognitoIdentityProviderClient,
   AdminUpdateUserAttributesCommand,
 } from "@aws-sdk/client-cognito-identity-provider";
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 
 const cognito = new CognitoIdentityProviderClient({
   region: process.env.AWS_REGION,

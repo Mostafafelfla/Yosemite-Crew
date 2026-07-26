@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ParentCompanionController } from "src/controllers/app/parent-companion.controller";
+import { ParentCompanionController } from "../controllers/app/parent-companion.controller.js";
 import { authorizeCognitoMobile } from "../middlewares/auth.js"; // for parents
 
 export const router = Router();

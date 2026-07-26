@@ -1,7 +1,7 @@
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import OrganizationModel from "src/models/organization";
-import { OrgBilling } from "src/models/organization.billing";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import OrganizationModel from "../models/organization.js";
+import { OrgBilling } from "../models/organization.billing.js";
 
 type OrgId = string | { toString(): string } | null | undefined;
 

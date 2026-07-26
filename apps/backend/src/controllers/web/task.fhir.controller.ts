@@ -2,11 +2,11 @@ import { Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
 import { Task as FhirTask } from "@yosemite-crew/fhir";
 import { z } from "zod";
-import { TaskService, TaskServiceError } from "src/services/task.service";
-import { taskFhirMapper } from "src/services/fhir-task.mapper";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import type { OrgRequest } from "src/middlewares/rbac";
+import { TaskService, TaskServiceError } from "../../services/task.service.js";
+import { taskFhirMapper } from "../../services/fhir-task.mapper.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import type { OrgRequest } from "../../middlewares/rbac.js";
 
 const taskResourceSchema = z
   .object({ resourceType: z.literal("Task") })

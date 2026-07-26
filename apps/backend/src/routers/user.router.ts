@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { UserController } from "../controllers/web/user.controller.js";
-import { authorizeCognito } from "src/middlewares/auth";
+import { authorizeCognito } from "../middlewares/auth.js";
 
 const router = Router();
 

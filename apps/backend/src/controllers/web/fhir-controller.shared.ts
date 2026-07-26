@@ -1,6 +1,6 @@
 import { Response } from "express";
 import { z } from "zod";
-import logger from "src/utils/logger";
+import logger from "../../utils/logger.js";
 
 type ServiceErrorLike = Error & { statusCode: number };
 

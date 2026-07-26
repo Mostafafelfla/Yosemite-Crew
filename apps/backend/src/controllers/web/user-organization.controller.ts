@@ -5,7 +5,7 @@ import {
   UserOrganizationServiceError,
   type UserOrganizationFHIRPayload,
 } from "../../services/user-organization.service.js";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const normalizeOrganisationReference = (value: string): string => {
   const trimmed = value.trim();

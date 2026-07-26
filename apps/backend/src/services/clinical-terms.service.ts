@@ -3,10 +3,10 @@ import path from "node:path";
 import CodeEntryModel, {
   type CodeEntryMongo,
   type CodeSystem,
-} from "src/models/code-entry";
-import { CodeService } from "src/services/code.service";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
+} from "../models/code-entry.js";
+import { CodeService } from "./code.service.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 import { z } from "zod";
 
 export type ClinicalDomain =
@@ -17,12 +17,7 @@ export type ClinicalDomain =
   | "Procedure";
 
 export type ClinicalSpecies =
-  | "SA"
-  | "LA"
-  | "FARM"
-  | "EXOTICS"
-  | "EQUINE"
-  | "AVIAN";
+  "SA" | "LA" | "FARM" | "EXOTICS" | "EQUINE" | "AVIAN";
 
 const SUPPORTED_SPECIES = [
   "SA",

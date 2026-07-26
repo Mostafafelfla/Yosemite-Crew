@@ -2,7 +2,7 @@ import {
   Prisma,
   type ExternalExpense as PrismaExternalExpense,
 } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 
 export class ExternalExpenseServiceError extends Error {
   constructor(

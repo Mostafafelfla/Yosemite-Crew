@@ -5,7 +5,7 @@ import {
   type ExternalExpenseInput,
   type ExternalExpenseUpdateInput,
 } from "../../services/expense.service.js";
-import logger from "src/utils/logger";
+import logger from "../../utils/logger.js";
 
 export const ExpenseController = {
   getExpenseSummary: async (req: Request, res: Response) => {

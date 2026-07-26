@@ -3,13 +3,16 @@ import {
   TaskController,
   TaskLibraryController,
   TaskTemplateController,
-} from "src/controllers/web/task.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
+} from "../controllers/web/task.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
 import {
   requirePermission,
   withOrgPermissions,
   withTaskOrgPermissions,
-} from "src/middlewares/rbac";
+} from "../middlewares/rbac.js";
 
 const router = Router();
 
