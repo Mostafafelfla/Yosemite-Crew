@@ -1,10 +1,10 @@
-import "./taskReminder.worker";
-import "./taskRecurrence.worker";
-import "./taskSchedule.worker";
-import "./appointment.worker";
-import "./idexx-reference.worker";
-import "./lab-status.worker";
-import "./lab-results.worker";
+import "./taskReminder.worker.js";
+import "./taskRecurrence.worker.js";
+import "./taskSchedule.worker.js";
+import "./appointment.worker.js";
+import "./idexx-reference.worker.js";
+import "./lab-status.worker.js";
+import "./lab-results.worker.js";
 import logger from "src/utils/logger";
 
 logger.info("👷 BullMQ workers running...");
