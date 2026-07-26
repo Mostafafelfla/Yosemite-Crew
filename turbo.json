@@ -2,8 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
       "outputs": [
         "build/**",
         ".vercel/**",
@@ -14,23 +19,38 @@
       ]
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": false
     },
     "lint": {
-      "dependsOn": ["^build", "^lint"]
+      "dependsOn": [
+        "^build",
+        "^lint"
+      ]
     },
     "type-check": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "dev": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": false,
       "persistent": true
     },
     "start": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": false
     }
-  }
+  },
+  "globalEnv": [
+    "DATABASE_URL",
+    "DIRECT_URL"
+  ]
 }
