@@ -1,10 +1,10 @@
 import "dotenv/config";
-import { createApp } from "./app";
-import { connectDB } from "./config/db";
-import { initQueues } from "./queues";
-import { configureStreamUploadPolicy } from "./config/stream-upload-policy";
-import logger from "./utils/logger";
-import "./workers";
+import { createApp } from "./app.js";
+import { connectDB } from "./config/db.js";
+import { initQueues } from "./queues/index.js";
+import { configureStreamUploadPolicy } from "./config/stream-upload-policy.js";
+import logger from "./utils/logger.js";
+import "./workers/index.js";
 
 const PORT = process.env.PORT || 3000;
 

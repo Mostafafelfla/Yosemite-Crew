@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { OrganizationController } from "../controllers/web/organization.controller";
+import { OrganizationController } from "../controllers/web/organization.controller.js";
 import { SpecialityController } from "src/controllers/web/speciality.controller";
-import { OrganisationInviteController } from "../controllers/web/organisation-invite.controller";
+import { OrganisationInviteController } from "../controllers/web/organisation-invite.controller.js";
 import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
 import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
 import { CatalogController } from "src/controllers/web/catalog.controller";

@@ -1,12 +1,12 @@
 import express from "express";
 import rateLimit from "express-rate-limit";
 import fileUpload from "express-fileupload";
-import { registerRoutes } from "./routers";
-import { StripeController } from "./controllers/web/stripe.controller";
-import { FinanceController } from "./controllers/app/finance.controller";
+import { registerRoutes } from "./routers/index.js";
+import { StripeController } from "./controllers/web/stripe.controller.js";
+import { FinanceController } from "./controllers/app/finance.controller.js";
 import cors from "cors";
-import { DocumensoWebhookController } from "./controllers/web/documenso.controller";
-import { ChatWebhookController } from "./controllers/app/chatWebhook.controller";
+import { DocumensoWebhookController } from "./controllers/web/documenso.controller.js";
+import { ChatWebhookController } from "./controllers/app/chatWebhook.controller.js";
 import mongoSanitize from "express-mongo-sanitize";
 import helmet from "helmet";
 import {

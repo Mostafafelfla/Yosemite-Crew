@@ -1,10 +1,10 @@
 import logger from "src/utils/logger";
-import { registerTaskSchedulers } from "./task.schedulers";
-import { registerTaskScheduleSchedulers } from "./task-schedule.scheduler";
-import { registerAppointmentSchedulers } from "./appointment.scheduler";
-import { registerIdexxReferenceScheduler } from "./idexx-reference.scheduler";
-import { registerLabStatusScheduler } from "./lab-status.scheduler";
-import { registerLabResultsScheduler } from "./lab-results.scheduler";
+import { registerTaskSchedulers } from "./task.schedulers.js";
+import { registerTaskScheduleSchedulers } from "./task-schedule.scheduler.js";
+import { registerAppointmentSchedulers } from "./appointment.scheduler.js";
+import { registerIdexxReferenceScheduler } from "./idexx-reference.scheduler.js";
+import { registerLabStatusScheduler } from "./lab-status.scheduler.js";
+import { registerLabResultsScheduler } from "./lab-results.scheduler.js";
 
 export async function initQueues() {
   await registerTaskSchedulers();
