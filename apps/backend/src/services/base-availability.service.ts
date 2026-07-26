@@ -3,12 +3,12 @@ import BaseAvailabilityModel, {
   type BaseAvailabilityDocument,
   type BaseAvailabilityMongo,
   type AvailabilitySlotMongo,
-} from "../models/base-availability";
+} from "../models/base-availability.js";
 import type { UserAvailability, DayOfWeek } from "@yosemite-crew/types";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { Prisma } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export class BaseAvailabilityServiceError extends Error {
   constructor(

@@ -6,11 +6,11 @@ import ContactRequestModel, {
   ContactStatus,
   ContactType,
   DsraDetails,
-} from "../models/contect-us";
+} from "../models/contect-us.js";
 import { Prisma } from "@prisma/client";
-import { prisma } from "../config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 
 export class ContactServiceError extends Error {
   constructor(

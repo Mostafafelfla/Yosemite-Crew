@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { OrgRequest } from "src/middlewares/rbac";
-import logger from "src/utils/logger";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import logger from "../../utils/logger.js";
 import {
   LabResultService,
   LabResultServiceError,
-} from "src/services/lab-result.service";
-import { IdexxResultsQueryService } from "src/services/idexx-results-query.service";
-import { mapAxiosError } from "src/utils/external-error";
+} from "../../services/lab-result.service.js";
+import { IdexxResultsQueryService } from "../../services/idexx-results-query.service.js";
+import { mapAxiosError } from "../../utils/external-error.js";
 import { mergePdfBuffers } from "@yosemite-crew/lib";
 
 const ensureProviderAndResultId = (

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { MarketingUnsubscribeController } from "src/controllers/app/marketing-unsubscribe.controller";
+import { MarketingUnsubscribeController } from "../controllers/app/marketing-unsubscribe.controller.js";
 
 const router = Router();
 

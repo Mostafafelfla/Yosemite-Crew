@@ -1,22 +1,22 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { AuthenticatedRequest } from "src/middlewares/auth";
-import { OrgRequest } from "src/middlewares/rbac";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
 import {
   ObservationToolDefinitionService,
   ObservationToolDefinitionServiceError,
-} from "src/services/observationToolDefinition.service";
+} from "../../services/observationToolDefinition.service.js";
 import {
   ObservationToolSubmissionService,
   ObservationToolSubmissionServiceError,
-} from "src/services/observationToolSubmission.service";
+} from "../../services/observationToolSubmission.service.js";
 import type {
   CreateObservationToolDefinitionInput,
   UpdateObservationToolDefinitionInput,
-} from "src/services/observationToolDefinition.service";
-import type { CreateObservationToolSubmissionInput } from "src/services/observationToolSubmission.service";
-import { TaskService } from "src/services/task.service";
+} from "../../services/observationToolDefinition.service.js";
+import type { CreateObservationToolSubmissionInput } from "../../services/observationToolSubmission.service.js";
+import { TaskService } from "../../services/task.service.js";
 
 const handleError = (error: unknown, res: Response) => {
   if (error instanceof ObservationToolDefinitionServiceError) {

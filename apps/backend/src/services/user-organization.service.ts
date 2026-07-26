@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
-import type { UserOrganizationMongo } from "../models/user-organization";
-import type { OrganizationMongo } from "../models/organization";
+import type { UserOrganizationMongo } from "../models/user-organization.js";
+import type { OrganizationMongo } from "../models/organization.js";
 import {
   fromUserOrganizationRequestDTO,
   toUserOrganizationResponseDTO,
@@ -8,13 +8,13 @@ import {
   type UserOrganizationResponseDTO,
   type UserOrganization,
 } from "@yosemite-crew/types";
-import { ROLE_PERMISSIONS, RoleCode } from "src/models/role-permission";
-import { AvailabilityService } from "./availability.service";
-import { StripeService } from "./stripe.service";
-import { sendFreePlanLimitReachedEmail } from "src/utils/org-usage-notifications";
-import { sendEmailTemplate } from "src/utils/email";
-import logger from "src/utils/logger";
-import { prisma } from "src/config/prisma";
+import { ROLE_PERMISSIONS, RoleCode } from "../models/role-permission.js";
+import { AvailabilityService } from "./availability.service.js";
+import { StripeService } from "./stripe.service.js";
+import { sendFreePlanLimitReachedEmail } from "../utils/org-usage-notifications.js";
+import { sendEmailTemplate } from "../utils/email.js";
+import logger from "../utils/logger.js";
+import { prisma } from "../config/prisma.js";
 import type { UserOrganization as PrismaUserOrganization } from "@prisma/client";
 
 export type UserOrganizationFHIRPayload = UserOrganizationRequestDTO;

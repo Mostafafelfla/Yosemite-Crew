@@ -14,12 +14,12 @@ import {
   toAppointmentResponseDTO,
   type TemplateKind,
 } from "@yosemite-crew/types";
-import { prisma } from "src/config/prisma";
-import { CatalogService, CatalogServiceError } from "./catalog.service";
-import { InvoiceService } from "./invoice.service";
-import { FinancePaymentService } from "./finance/payment";
-import { resolvePaymentCollectionMethod } from "src/utils/payment";
-import { CompanionOrganisationService } from "./companion-organisation.service";
+import { prisma } from "../config/prisma.js";
+import { CatalogService, CatalogServiceError } from "./catalog.service.js";
+import { InvoiceService } from "./invoice.service.js";
+import { FinancePaymentService } from "./finance/payment.js";
+import { resolvePaymentCollectionMethod } from "../utils/payment.js";
+import { CompanionOrganisationService } from "./companion-organisation.service.js";
 
 type AppointmentStatus = AppointmentDomain["status"];
 

@@ -1,15 +1,15 @@
-import { AppointmentService } from "src/services/appointment.service";
-import { TaskService } from "src/services/task.service";
-import { FormService } from "src/services/form.service";
-import { DocumentService } from "src/services/document.service";
-import { LabResultService } from "src/services/lab-result.service";
-import { LabOrderService } from "src/services/lab-order.service";
-import { InvoiceService } from "src/services/invoice.service";
-import { CompanionService } from "src/services/companion.service";
-import { prisma } from "src/config/prisma";
-import logger from "src/utils/logger";
+import { AppointmentService } from "./appointment.service.js";
+import { TaskService } from "./task.service.js";
+import { FormService } from "./form.service.js";
+import { DocumentService } from "./document.service.js";
+import { LabResultService } from "./lab-result.service.js";
+import { LabOrderService } from "./lab-order.service.js";
+import { InvoiceService } from "./invoice.service.js";
+import { CompanionService } from "./companion.service.js";
+import { prisma } from "../config/prisma.js";
+import logger from "../utils/logger.js";
 import { type AppointmentResponseDTO } from "@yosemite-crew/types";
-import type { DocumentDto } from "src/services/document.service";
+import type { DocumentDto } from "./document.service.js";
 
 type LabOrderSummary = {
   idexxOrderId?: string | null;

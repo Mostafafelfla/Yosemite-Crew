@@ -1,5 +1,5 @@
 import { type RoomType } from "@yosemite-crew/database";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import type { RoomUnitGroup } from "@yosemite-crew/types";
 import {
   normalizeStrictStringList,
@@ -7,7 +7,7 @@ import {
   requireNonEmptyString,
   roomTypeSupportsUnits,
   RoomValidationError,
-} from "./room-management.helpers";
+} from "./room-management.helpers.js";
 
 type RoomRow = {
   id: string;

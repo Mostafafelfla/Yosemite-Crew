@@ -1,12 +1,12 @@
 import admin from "firebase-admin";
 import { NotificationType } from "@prisma/client";
-import logger from "src/utils/logger";
-import { NotificationPayload } from "src/utils/notificationTemplates";
-import { DeviceTokenService } from "./deviceToken.service";
-import { NotificationModel } from "src/models/notification";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
+import logger from "../utils/logger.js";
+import { NotificationPayload } from "../utils/notificationTemplates.js";
+import { DeviceTokenService } from "./deviceToken.service.js";
+import { NotificationModel } from "../models/notification.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 const createNotificationRecord = async (input: {
   userId: string;

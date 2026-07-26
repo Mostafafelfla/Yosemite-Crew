@@ -5,9 +5,9 @@ import {
   FormAssignmentServiceError,
   createFormAssignmentSchema,
   formAssignmentSignerIdentitySchema,
-} from "src/services/form-assignment.service";
-import logger from "src/utils/logger";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+} from "../../services/form-assignment.service.js";
+import logger from "../../utils/logger.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 
 const appointmentParamsSchema = z.object({
   organisationId: z.string().min(1),

@@ -1,5 +1,5 @@
 import { Queue } from "bullmq";
-import { defaultQueueOptions } from "./bull.config";
+import { defaultQueueOptions } from "./bull.config.js";
 
 export const LabResultsQueue = new Queue("lab-results", {
   ...defaultQueueOptions,

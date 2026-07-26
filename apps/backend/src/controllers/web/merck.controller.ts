@@ -1,14 +1,11 @@
 import { Request, Response } from "express";
 import { randomUUID } from "node:crypto";
-import { OrgRequest } from "src/middlewares/rbac";
-import { MerckService } from "src/services/merck.service";
-import {
-  handleMerckError,
-  sendMerckSuccess,
-} from "src/controllers/merck/merck-response";
-import UserProfileModel from "src/models/user-profile";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import { MerckService } from "../../services/merck.service.js";
+import { handleMerckError, sendMerckSuccess } from "../merck/merck-response.js";
+import UserProfileModel from "../../models/user-profile.js";
+import { prisma } from "../../config/prisma.js";
+import { isReadFromPostgres } from "../../config/read-switch.js";
 
 export const MerckController = {
   async searchManuals(req: Request, res: Response) {
@@ -69,9 +66,7 @@ export const MerckController = {
               .select({ "personalDetails.timezone": 1 })
               .lean();
         const personalDetails = profile?.personalDetails as
-          | { timezone?: string }
-          | null
-          | undefined;
+          { timezone?: string } | null | undefined;
         resolvedTimezone = personalDetails?.timezone;
       }
 

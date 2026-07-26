@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { UserOrganizationController } from "../controllers/web/user-organization.controller";
-import { authorizeCognito } from "src/middlewares/auth";
+import { UserOrganizationController } from "../controllers/web/user-organization.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
 
 const router = Router();
 

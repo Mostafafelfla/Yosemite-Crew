@@ -4,15 +4,15 @@ import mongoose, { Types } from "mongoose";
 import BaseAvailabilityModel, {
   DayOfWeek,
   AvailabilitySlotMongo,
-} from "src/models/base-availability";
+} from "../models/base-availability.js";
 import WeeklyAvailabilityOverrideModel, {
   type WeeklyAvailabilityOverrideDocument,
-} from "src/models/weekly-availablity-override";
-import { OccupancyModel, type OccupancyDocument } from "src/models/occupancy";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+} from "../models/weekly-availablity-override.js";
+import { OccupancyModel, type OccupancyDocument } from "../models/occupancy.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { Prisma, OccupancySourceType } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 dayjs.extend(utc);
 

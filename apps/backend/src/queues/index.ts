@@ -1,4 +1,4 @@
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 import { registerTaskSchedulers } from "./task.schedulers.js";
 import { registerTaskScheduleSchedulers } from "./task-schedule.scheduler.js";
 import { registerAppointmentSchedulers } from "./appointment.scheduler.js";

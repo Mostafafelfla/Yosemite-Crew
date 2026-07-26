@@ -4,13 +4,13 @@ import {
   InventoryController,
   InventoryMetaFieldController,
   InventoryVendorController,
-} from "src/controllers/web/inventory.controller";
-import { authorizeCognito } from "src/middlewares/auth";
+} from "../controllers/web/inventory.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
 import {
   requirePermission,
   withInventoryItemOrgPermissions,
   withOrgPermissions,
-} from "src/middlewares/rbac";
+} from "../middlewares/rbac.js";
 
 const router = Router();
 

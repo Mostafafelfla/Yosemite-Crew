@@ -1,6 +1,6 @@
 import Router from "express";
-import { NotificationController } from "../controllers/app/notification.controller";
-import { authorizeCognitoMobile } from "src/middlewares/auth";
+import { NotificationController } from "../controllers/app/notification.controller.js";
+import { authorizeCognitoMobile } from "../middlewares/auth.js";
 
 export const notificationRouter = Router();
 

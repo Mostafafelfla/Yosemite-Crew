@@ -1,7 +1,7 @@
-import { DeviceTokenModel } from "src/models/deviceToken";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { DeviceTokenModel } from "../models/deviceToken.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export const DeviceTokenService = {
   async registerToken(

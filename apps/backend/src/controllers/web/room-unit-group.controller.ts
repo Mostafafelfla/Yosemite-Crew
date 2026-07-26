@@ -6,13 +6,13 @@ import {
 import {
   RoomUnitGroupService,
   RoomUnitGroupServiceError,
-} from "src/services/room-unit-group.service";
+} from "../../services/room-unit-group.service.js";
 import {
   getOrganisationId,
   handleError,
   isLocationResourcePayload,
   requireParam,
-} from "./room-unit.controller.shared";
+} from "./room-unit.controller.shared.js";
 
 export const RoomUnitGroupController = {
   create: async (req: Request, res: Response) => {

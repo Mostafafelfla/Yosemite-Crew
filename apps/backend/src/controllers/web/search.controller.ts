@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma.js";
 import {
   CatalogService,
   CatalogServiceError,
-} from "src/services/catalog.service";
+} from "../../services/catalog.service.js";
 import {
   InventoryService,
   InventoryServiceError,
-} from "src/services/inventory.service";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
+} from "../../services/inventory.service.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
 import type {
   ScopedSearchItem,
   ScopedSearchResponse,

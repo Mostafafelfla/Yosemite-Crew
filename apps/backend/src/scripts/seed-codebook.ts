@@ -2,8 +2,8 @@ import "dotenv/config";
 import fs from "node:fs";
 import path from "node:path";
 import mongoose from "mongoose";
-import { CodeService } from "src/services/code.service";
-import type { CodeType } from "src/models/code-entry";
+import { CodeService } from "../services/code.service.js";
+import type { CodeType } from "../models/code-entry.js";
 
 type BreedSeedItem = {
   species: "canine" | "feline" | "equine";

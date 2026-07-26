@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { DeviceTokenController } from "../controllers/app/deviceToken.controller";
-import { authorizeCognitoMobile } from "src/middlewares/auth";
+import { DeviceTokenController } from "../controllers/app/deviceToken.controller.js";
+import { authorizeCognitoMobile } from "../middlewares/auth.js";
 
 const router = Router();
 

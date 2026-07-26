@@ -1,8 +1,8 @@
 import { Router } from "express";
 import rateLimit from "express-rate-limit";
-import { ClinicalArtifactFhirController } from "src/controllers/web/clinical-artifact.fhir.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { ClinicalArtifactFhirController } from "../controllers/web/clinical-artifact.fhir.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

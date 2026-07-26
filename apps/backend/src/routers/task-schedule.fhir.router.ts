@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { TaskScheduleFhirController } from "src/controllers/web/task-schedule.fhir.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { TaskScheduleFhirController } from "../controllers/web/task-schedule.fhir.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

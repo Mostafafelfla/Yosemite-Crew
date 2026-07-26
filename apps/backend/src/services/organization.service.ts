@@ -1,5 +1,5 @@
 import { isValidObjectId } from "mongoose";
-import type { OrganizationMongo } from "../models/organization";
+import type { OrganizationMongo } from "../models/organization.js";
 import {
   fromOrganizationRequestDTO,
   toOrganizationResponseDTO,
@@ -8,15 +8,15 @@ import {
   type OrganizationDTOAttributes,
   type Organisation,
 } from "@yosemite-crew/types";
-import { UserOrganizationService } from "./user-organization.service";
-import { SpecialityService } from "./speciality.service";
-import { OrganisationRoomService } from "./organisation-room.service";
-import { buildS3Key, moveFile } from "src/middlewares/upload";
-import logger from "src/utils/logger";
+import { UserOrganizationService } from "./user-organization.service.js";
+import { SpecialityService } from "./speciality.service.js";
+import { OrganisationRoomService } from "./organisation-room.service.js";
+import { buildS3Key, moveFile } from "../middlewares/upload.js";
+import logger from "../utils/logger.js";
 import { Prisma, OrganizationType } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { buildGeoPoint } from "src/utils/geojson";
-import { calculateDistanceMeters, toRadians } from "src/utils/geo";
+import { prisma } from "../config/prisma.js";
+import { buildGeoPoint } from "../utils/geojson.js";
+import { calculateDistanceMeters, toRadians } from "../utils/geo.js";
 
 const TAX_ID_EXTENSION_URL =
   "http://example.org/fhir/StructureDefinition/taxId";

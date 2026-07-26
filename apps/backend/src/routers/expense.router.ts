@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { ExpenseController } from "../controllers/app/expense.controller";
-import { authorizeCognitoMobile } from "src/middlewares/auth";
+import { ExpenseController } from "../controllers/app/expense.controller.js";
+import { authorizeCognitoMobile } from "../middlewares/auth.js";
 
 const router = Router();
 

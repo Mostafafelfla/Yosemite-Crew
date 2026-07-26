@@ -3,16 +3,16 @@ import { z } from "zod";
 import {
   ClinicalArtifactService,
   ClinicalArtifactServiceError,
-} from "src/services/clinical-artifact.service";
-import { clinicalArtifactFhirMapper } from "src/services/fhir-clinical-artifact.mapper";
+} from "../../services/clinical-artifact.service.js";
+import { clinicalArtifactFhirMapper } from "../../services/fhir-clinical-artifact.mapper.js";
 import {
   InventoryConsumptionService,
   InventoryConsumptionServiceError,
-} from "src/services/inventory-consumption.service";
-import { renderPrescriptionLabelPdf } from "src/services/rendered-document-renderer.service";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import logger from "src/utils/logger";
+} from "../../services/inventory-consumption.service.js";
+import { renderPrescriptionLabelPdf } from "../../services/rendered-document-renderer.service.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import logger from "../../utils/logger.js";
 
 const actionBodySchema = z.object({
   metadata: z.record(z.unknown()).optional(),

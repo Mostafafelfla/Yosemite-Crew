@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import logger from "../utils/logger";
+import logger from "../utils/logger.js";
 
 /**
  * Remove any `user:password@` credentials from a MongoDB connection string so

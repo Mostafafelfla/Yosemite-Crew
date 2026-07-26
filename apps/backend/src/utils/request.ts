@@ -1,5 +1,5 @@
 import type { Request } from "express";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+import type { AuthenticatedRequest } from "../middlewares/auth.js";
 
 export const resolveUserIdFromRequest = (req: Request): string | undefined => {
   const authRequest = req as AuthenticatedRequest;

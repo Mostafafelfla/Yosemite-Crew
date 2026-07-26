@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { FormService, FormServiceError } from "src/services/form.service";
+import { FormService, FormServiceError } from "../../services/form.service.js";
 import { FormRequestDTO, FormSubmissionRequestDTO } from "@yosemite-crew/types";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import type { OrgRequest } from "src/middlewares/rbac";
-import logger from "src/utils/logger";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import type { OrgRequest } from "../../middlewares/rbac.js";
+import logger from "../../utils/logger.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const FORM_RESPONSE_PARENT_URL =
   "https://yosemitecrew.com/fhir/StructureDefinition/form-response-parent";

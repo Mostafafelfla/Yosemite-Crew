@@ -2,12 +2,12 @@ import { Request, Response } from "express";
 import { z } from "zod";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
-import logger from "src/utils/logger";
+import logger from "../../utils/logger.js";
 import {
   CatalogService,
   CatalogServiceError,
   type CatalogProductUpsertInput,
-} from "src/services/catalog.service";
+} from "../../services/catalog.service.js";
 import {
   fromCatalogRequestDTO,
   fromCatalogResolveOperationRequestDTO,

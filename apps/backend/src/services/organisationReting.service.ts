@@ -1,9 +1,9 @@
 import { Types } from "mongoose";
-import { OrganisationRatingModel } from "../models/organisationRating";
-import OrganizationModel from "../models/organization";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { OrganisationRatingModel } from "../models/organisationRating.js";
+import OrganizationModel from "../models/organization.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 const ensureObjectId = (value: unknown, field: string): string => {
   if (typeof value !== "string" || !value.trim()) {

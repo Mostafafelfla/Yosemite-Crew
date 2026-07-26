@@ -1,5 +1,5 @@
-import { IdexxResultsClient } from "src/integrations/idexx/idexx-results.client";
-import logger from "src/utils/logger";
+import { IdexxResultsClient } from "../integrations/idexx/idexx-results.client.js";
+import logger from "../utils/logger.js";
 
 const getEnv = (key: string): string | null => {
   return process.env[key]?.trim() || null;

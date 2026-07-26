@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { OrgRequest } from "src/middlewares/rbac";
-import logger from "src/utils/logger";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import logger from "../../utils/logger.js";
 import {
   LabOrderService,
   LabOrderServiceError,
-} from "src/services/lab-order.service";
+} from "../../services/lab-order.service.js";
 
 const ListOrdersSearchBodySchema = z.preprocess(
   (value) => {

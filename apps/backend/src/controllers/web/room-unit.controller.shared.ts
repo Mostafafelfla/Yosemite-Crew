@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import logger from "src/utils/logger";
-import { OrgRequest } from "src/middlewares/rbac";
+import logger from "../../utils/logger.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
 
 type ErrorConstructor<TError extends Error> = {
   new (...args: never[]): TError;

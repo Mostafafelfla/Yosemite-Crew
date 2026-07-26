@@ -2,7 +2,7 @@ import { isValidObjectId, Types } from "mongoose";
 import SpecialityModel, {
   type SpecialityDocument,
   type SpecialityMongo,
-} from "../models/speciality";
+} from "../models/speciality.js";
 import {
   fromSpecialityRequestDTO,
   toSpecialityResponseDTO,
@@ -10,14 +10,14 @@ import {
   type SpecialityRequestDTO,
   type SpecialityResponseDTO,
 } from "@yosemite-crew/types";
-import { ServiceService } from "./service.service";
-import UserModel from "src/models/user";
-import OrganizationModel from "src/models/organization";
-import { sendEmailTemplate } from "src/utils/email";
-import logger from "src/utils/logger";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { ServiceService } from "./service.service.js";
+import UserModel from "../models/user.js";
+import OrganizationModel from "../models/organization.js";
+import { sendEmailTemplate } from "../utils/email.js";
+import logger from "../utils/logger.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export type SpecialityFHIRPayload = SpecialityRequestDTO;
 

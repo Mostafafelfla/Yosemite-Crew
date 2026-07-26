@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   fromFHIROrganisationRoom,
   toFHIROrganisationRoom,
@@ -9,8 +9,8 @@ import {
   OrganisationRoomService,
   OrganisationRoomServiceError,
   type OrganisationRoomInput,
-} from "../../services/organisation-room.service";
-import { OrgRequest } from "src/middlewares/rbac";
+} from "../../services/organisation-room.service.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
 
 const requireParam = (
   res: Response,

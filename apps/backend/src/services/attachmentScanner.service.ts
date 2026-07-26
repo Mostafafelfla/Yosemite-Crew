@@ -1,6 +1,6 @@
 // src/services/attachmentScanner.service.ts
 import crypto from "node:crypto";
-import logger from "src/utils/logger";
+import logger from "../utils/logger.js";
 
 /**
  * Content-based malware check for chat attachments. Complements the upload-type

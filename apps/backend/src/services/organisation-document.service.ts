@@ -3,15 +3,15 @@ import OrganizationDocumentModel, {
   OrganizationDocumentDocument,
   OrganizationDocumentMongo,
   OrgDocumentCategory,
-} from "../models/organisation-document";
+} from "../models/organisation-document.js";
 import {
   OrgDocumentCategory as PrismaOrgDocumentCategory,
   OrgDocumentVisibility as PrismaOrgDocumentVisibility,
 } from "@prisma/client";
-import { getURLForKey } from "src/middlewares/upload";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { getURLForKey } from "../middlewares/upload.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export class OrgDocumentServiceError extends Error {
   constructor(

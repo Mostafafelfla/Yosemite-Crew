@@ -2,14 +2,14 @@
 import { StreamChat } from "stream-chat";
 import crypto from "node:crypto";
 
-import { ChatServiceError } from "./chat.service";
-import { UserProfileService } from "./user-profile.service";
-import { UserService } from "./user.service";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import UserOrganizationModel from "src/models/user-organization";
-import ChatSessionModel from "src/models/chatSession";
-import { shouldDualWrite, handleDualWriteError } from "src/utils/dual-write";
+import { ChatServiceError } from "./chat.service.js";
+import { UserProfileService } from "./user-profile.service.js";
+import { UserService } from "./user.service.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import UserOrganizationModel from "../models/user-organization.js";
+import ChatSessionModel from "../models/chatSession.js";
+import { shouldDualWrite, handleDualWriteError } from "../utils/dual-write.js";
 
 const STREAM_KEY = process.env.STREAM_API_KEY!;
 const STREAM_SECRET = process.env.STREAM_API_SECRET!;

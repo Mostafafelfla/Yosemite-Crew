@@ -1,7 +1,10 @@
 import { Router } from "express";
-import { WorkspaceController } from "src/controllers/web/workspace.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { WorkspaceController } from "../controllers/web/workspace.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

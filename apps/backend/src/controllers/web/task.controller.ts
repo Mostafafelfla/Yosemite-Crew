@@ -1,10 +1,10 @@
 // controllers/task.controller.ts
 import { Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
-import { AuthenticatedRequest } from "src/middlewares/auth";
-import type { OrgRequest } from "src/middlewares/rbac";
-import type { Permission } from "src/models/role-permission";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
+import type { OrgRequest } from "../../middlewares/rbac.js";
+import type { Permission } from "../../models/role-permission.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
 import {
   isTaskCategory,
   isTaskKind,
@@ -19,17 +19,17 @@ import {
   TaskServiceError,
   TaskAudience,
   TaskUpdateInput,
-} from "src/services/task.service";
+} from "../../services/task.service.js";
 import {
   CreateTaskLibraryDefinitionInput,
   TaskLibraryService,
   UpdateTaskLibraryDefinitionInput,
-} from "src/services/taskLibrary.service";
+} from "../../services/taskLibrary.service.js";
 import {
   CreateTaskTemplateInput,
   TaskTemplateService,
   UpdateTaskTemplateInput,
-} from "src/services/taskTemplate.service";
+} from "../../services/taskTemplate.service.js";
 import { TaskKind, TaskStatus } from "@prisma/client";
 
 type CreateCustomTaskRequestBody = Omit<
@@ -172,7 +172,9 @@ const handleError = (error: unknown, res: Response) => {
   return res.status(500).json({ message: "Internal Server Error" });
 };
 
-const resolveUserId = (req: Request<unknown, unknown, unknown, unknown>): string => {
+const resolveUserId = (
+  req: Request<unknown, unknown, unknown, unknown>,
+): string => {
   const authReq = req as AuthenticatedRequest;
   return typeof authReq.userId === "string" ? authReq.userId : "";
 };

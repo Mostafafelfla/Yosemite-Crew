@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { z } from "zod";
 import { AppointmentRequestDTO } from "@yosemite-crew/types";
-import { AppointmentPrismaService } from "src/services/appointment.prisma.service";
-import { InvoiceService } from "src/services/invoice.service";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import logger from "src/utils/logger";
-import { generatePresignedUrl } from "src/middlewares/upload";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import type { OrgRequest } from "src/middlewares/rbac";
+import { AppointmentPrismaService } from "../../services/appointment.prisma.service.js";
+import { InvoiceService } from "../../services/invoice.service.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import logger from "../../utils/logger.js";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import type { OrgRequest } from "../../middlewares/rbac.js";
 
 type RescheduleRequestBody = {
   startTime: string | Date;

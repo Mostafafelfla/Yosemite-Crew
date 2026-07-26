@@ -1,5 +1,5 @@
-import type { CodeSystem } from "src/models/code-entry";
-import { prisma } from "src/config/prisma";
+import type { CodeSystem } from "../models/code-entry.js";
+import { prisma } from "../config/prisma.js";
 
 export type CodeSyncKind = "species" | "breeds" | "genders" | "tests";
 

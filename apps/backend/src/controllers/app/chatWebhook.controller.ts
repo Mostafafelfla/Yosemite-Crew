@@ -1,8 +1,8 @@
 // src/controllers/app/chatWebhook.controller.ts
 import type { Request, Response } from "express";
 import { StreamChat } from "stream-chat";
-import { scanAttachmentUrl } from "src/services/attachmentScanner.service";
-import logger from "src/utils/logger";
+import { scanAttachmentUrl } from "../../services/attachmentScanner.service.js";
+import logger from "../../utils/logger.js";
 
 const STREAM_KEY = process.env.STREAM_API_KEY!;
 const STREAM_SECRET = process.env.STREAM_API_SECRET!;

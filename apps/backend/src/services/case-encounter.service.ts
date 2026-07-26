@@ -1,9 +1,9 @@
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { CatalogService, CatalogServiceError } from "./catalog.service";
-import { AuditTrailService } from "./audit-trail.service";
-import { WorkspaceService } from "./workspace.prisma.service";
-import { FinanceEventService } from "./finance/events";
+import { prisma } from "../config/prisma.js";
+import { CatalogService, CatalogServiceError } from "./catalog.service.js";
+import { AuditTrailService } from "./audit-trail.service.js";
+import { WorkspaceService } from "./workspace.prisma.service.js";
+import { FinanceEventService } from "./finance/events.js";
 import type {
   Admission as AdmissionDomain,
   AppointmentKind,

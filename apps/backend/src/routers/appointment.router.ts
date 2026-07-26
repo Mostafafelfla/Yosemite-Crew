@@ -1,11 +1,14 @@
 import { Router } from "express";
-import { AppointmentController } from "../controllers/web/appointment.prisma.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
+import { AppointmentController } from "../controllers/web/appointment.prisma.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
 import {
   requirePermission,
   withAppointmentOrgPermissions,
   withOrgPermissions,
-} from "src/middlewares/rbac";
+} from "../middlewares/rbac.js";
 
 const router = Router();
 

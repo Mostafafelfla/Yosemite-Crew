@@ -1,7 +1,10 @@
 import { Router } from "express";
-import { DocumentController } from "../controllers/app/document.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
+import { DocumentController } from "../controllers/app/document.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { withOrgPermissions, requirePermission } from "../middlewares/rbac.js";
 
 const router = Router();
 

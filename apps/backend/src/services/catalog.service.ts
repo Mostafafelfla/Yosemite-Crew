@@ -21,21 +21,21 @@ import {
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import { Prisma } from "@prisma/client";
-import { AvailabilitySlotMongo } from "src/models/base-availability";
-import { prisma } from "src/config/prisma";
-import { AvailabilityService } from "./availability.service";
+import { AvailabilitySlotMongo } from "../models/base-availability.js";
+import { prisma } from "../config/prisma.js";
+import { AvailabilityService } from "./availability.service.js";
 import {
   addCachedPromise,
   type CachedPromise,
-} from "src/utils/cached-promise-cache";
-import logger from "src/utils/logger";
+} from "../utils/cached-promise-cache.js";
+import logger from "../utils/logger.js";
 import {
   buildBookableWindowsForVets,
   mapOrganisationWithAddress,
   normalizeSlotForSelectedDay,
   resolveOrganisationTimezone,
-} from "src/utils/scheduling";
-import { filterWithinRadius, getBoundingDeltas } from "src/utils/geo";
+} from "../utils/scheduling.js";
+import { filterWithinRadius, getBoundingDeltas } from "../utils/geo.js";
 
 dayjs.extend(utc);
 
@@ -2206,19 +2206,17 @@ export const CatalogService = {
 
           if (nextPackageItems.length > 0) {
             await tx.productPackageItem.createMany({
-              data: nextPackageItems.map(
-                (item): PackageItemCreateData => ({
-                  packageId: pkg.id,
-                  childProductItemId: item.childProductItemId,
-                  inventoryItemId: item.inventoryItemId,
-                  quantity: item.quantity,
-                  pricingMode: item.pricingMode,
-                  overridePrice: item.overridePrice,
-                  discountPercent: item.discountPercent,
-                  sortOrder: item.sortOrder,
-                  isOptional: item.isOptional,
-                }),
-              ),
+              data: nextPackageItems.map((item): PackageItemCreateData => ({
+                packageId: pkg.id,
+                childProductItemId: item.childProductItemId,
+                inventoryItemId: item.inventoryItemId,
+                quantity: item.quantity,
+                pricingMode: item.pricingMode,
+                overridePrice: item.overridePrice,
+                discountPercent: item.discountPercent,
+                sortOrder: item.sortOrder,
+                isOptional: item.isOptional,
+              })),
             });
           }
         }

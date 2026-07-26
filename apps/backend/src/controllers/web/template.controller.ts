@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
-import { AuthenticatedRequest } from "src/middlewares/auth";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
 import {
   createTemplateInstanceSchema,
   createTemplateSchema,
@@ -10,7 +10,7 @@ import {
   updateTemplateCatalogLinksSchema,
   updateTemplateInstanceSchema,
   updateTemplateSchema,
-} from "src/services/template.service";
+} from "../../services/template.service.js";
 import { z } from "zod";
 import { TemplateKind, TemplateScope, TemplateStatus } from "@prisma/client";
 

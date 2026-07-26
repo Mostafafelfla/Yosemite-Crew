@@ -1,18 +1,18 @@
-import { FormModel, FormSubmissionModel } from "src/models/form";
-import { type FormSubmissionDocument } from "src/models/form";
-import { DocumensoService } from "./documenso.service";
-import { ParentModel } from "src/models/parent";
-import UserModel from "src/models/user";
-import logger from "src/utils/logger";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import { FormModel, FormSubmissionModel } from "../models/form.js";
+import { type FormSubmissionDocument } from "../models/form.js";
+import { DocumensoService } from "./documenso.service.js";
+import { ParentModel } from "../models/parent.js";
+import UserModel from "../models/user.js";
+import logger from "../utils/logger.js";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 import { Prisma } from "@prisma/client";
 import { type HydratedDocument, Types } from "mongoose";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../config/read-switch.js";
 import {
   createRenderedDocumentRecord,
   signPersistedRenderedDocument,
-} from "src/services/rendered-document.service";
+} from "./rendered-document.service.js";
 
 type FormSubmissionDoc = HydratedDocument<FormSubmissionDocument> & {
   _id: Types.ObjectId;
@@ -361,9 +361,7 @@ export class FormSigningService {
             documentId:
               (
                 signedRenderedDocument.signing as
-                  | { documentId?: string }
-                  | null
-                  | undefined
+                  { documentId?: string } | null | undefined
               )?.documentId ?? renderedDocument.id,
             signer: {
               email: signerEmail,
@@ -377,16 +375,12 @@ export class FormSigningService {
         documentId:
           (
             signedRenderedDocument.signing as
-              | { documentId?: string }
-              | null
-              | undefined
+              { documentId?: string } | null | undefined
           )?.documentId ?? renderedDocument.id,
         signingUrl:
           (
             signedRenderedDocument.signing as
-              | { signingUrl?: string }
-              | null
-              | undefined
+              { signingUrl?: string } | null | undefined
           )?.signingUrl ?? null,
       };
     }
@@ -473,9 +467,7 @@ export class FormSigningService {
       documentId:
         (
           signedRenderedDocument.signing as
-            | { documentId?: string }
-            | null
-            | undefined
+            { documentId?: string } | null | undefined
         )?.documentId ?? renderedDocument.id,
       signer: {
         email: signerEmail,
@@ -502,16 +494,12 @@ export class FormSigningService {
       documentId:
         (
           signedRenderedDocument.signing as
-            | { documentId?: string }
-            | null
-            | undefined
+            { documentId?: string } | null | undefined
         )?.documentId ?? renderedDocument.id,
       signingUrl:
         (
           signedRenderedDocument.signing as
-            | { signingUrl?: string }
-            | null
-            | undefined
+            { signingUrl?: string } | null | undefined
         )?.signingUrl ?? null,
     };
   }
@@ -527,9 +515,7 @@ export class FormSigningService {
 
     // 2️⃣ Validate signing state
     const signing = submission.signing as
-      | { status?: string; documentId?: string }
-      | null
-      | undefined;
+      { status?: string; documentId?: string } | null | undefined;
     const signingStatus = isReadFromPostgres()
       ? FormSigningService.extractSigningStatus(
           submission.signing as Prisma.JsonValue | null | undefined,

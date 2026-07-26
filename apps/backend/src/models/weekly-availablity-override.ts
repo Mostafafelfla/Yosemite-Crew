@@ -1,5 +1,5 @@
 import { Schema, Document, model, type HydratedDocument } from "mongoose";
-import { DayOfWeek } from "./base-availability";
+import { DayOfWeek } from "./base-availability.js";
 
 export interface OverrideSlot {
   startTime: string;

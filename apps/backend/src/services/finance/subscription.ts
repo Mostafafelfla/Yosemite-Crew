@@ -1,7 +1,7 @@
 import { Prisma, BillingInterval, SubscriptionStatus } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma.js";
 import Stripe from "stripe";
-import { FinanceEventService } from "./events";
+import { FinanceEventService } from "./events.js";
 
 const toSubscriptionStatus = (
   value?: string | null,
@@ -270,8 +270,7 @@ export const FinanceSubscriptionService = {
         referenceType: input.referenceType ?? undefined,
         referenceId: input.referenceId ?? undefined,
         metadata: input.metadata as unknown as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
         occurredAt: input.occurredAt ?? new Date(),
       },
     });
@@ -393,8 +392,7 @@ export const FinanceSubscriptionService = {
         appointmentsUsed: toPositiveInteger(input.appointmentsUsed ?? 0),
         toolsUsed: toPositiveInteger(input.toolsUsed ?? 0),
         metadata: input.metadata as unknown as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
         snapshotAt: input.snapshotAt ?? new Date(),
       },
     });
@@ -466,8 +464,7 @@ export const FinanceSubscriptionService = {
         grantedAt: input.grantedAt ?? new Date(),
         expiresAt: input.expiresAt ?? undefined,
         metadata: input.metadata as unknown as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
       },
       update: {
         name: input.name ?? undefined,
@@ -477,8 +474,7 @@ export const FinanceSubscriptionService = {
         grantedAt: input.grantedAt ?? undefined,
         expiresAt: input.expiresAt ?? undefined,
         metadata: input.metadata as unknown as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
       },
     });
   },
@@ -556,8 +552,7 @@ export const FinanceSubscriptionService = {
         externalPriceId: input.externalPriceId ?? undefined,
         externalProductId: input.externalProductId ?? undefined,
         metadata: input.metadata as unknown as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
       },
       update: {
         externalCustomerId: input.externalCustomerId ?? undefined,
@@ -567,8 +562,7 @@ export const FinanceSubscriptionService = {
         externalPriceId: input.externalPriceId ?? undefined,
         externalProductId: input.externalProductId ?? undefined,
         metadata: input.metadata as unknown as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
       },
     });
   },

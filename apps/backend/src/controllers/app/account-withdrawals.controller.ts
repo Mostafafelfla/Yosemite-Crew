@@ -3,8 +3,8 @@ import { Request, Response } from "express";
 import {
   AccountWithdrawalService,
   AccountWithdrawalServiceError,
-} from "src/services/account-withdrawal.service";
-import { AuthenticatedRequest } from "src/middlewares/auth";
+} from "../../services/account-withdrawal.service.js";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
 
 type AccountWithdrawalBody = {
   fullName: string;

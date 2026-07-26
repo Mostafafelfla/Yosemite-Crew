@@ -1,13 +1,13 @@
 import { type Request, type Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   UserProfileService,
   UserProfileServiceError,
   type CreateUserProfilePayload,
-} from "../../services/user-profile.service";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
-import { generatePresignedUrl } from "src/middlewares/upload";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/user-profile.service.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 function ensurePlainObjectBody(
   body: unknown,

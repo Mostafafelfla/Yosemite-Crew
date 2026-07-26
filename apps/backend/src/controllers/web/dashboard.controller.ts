@@ -5,8 +5,8 @@ import {
   DashboardServiceError,
   DashboardBucket,
   SummaryRange,
-} from "src/services/dashboard.service";
-import logger from "src/utils/logger";
+} from "../../services/dashboard.service.js";
+import logger from "../../utils/logger.js";
 
 const asSummaryRange = (
   value: unknown,

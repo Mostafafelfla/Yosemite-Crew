@@ -15,8 +15,8 @@ import {
   normalizePatientStatus,
   normalizePatientType,
   resolveLegacyPatientId,
-} from "./migrate-all.helpers";
-import { normalizeRoomType } from "../services/room-management.helpers";
+} from "./migrate-all.helpers.js";
+import { normalizeRoomType } from "../services/room-management.helpers.js";
 
 dotenv.config();
 
@@ -607,8 +607,7 @@ const migrateModel = async (
 
     if (prismaName === "UserProfile" && data.id) {
       const personal = obj.personalDetails as
-        | Record<string, unknown>
-        | undefined;
+        Record<string, unknown> | undefined;
       const addr = extractAddress(personal?.address);
       if (addr) {
         const addrData = toIdString(addr);

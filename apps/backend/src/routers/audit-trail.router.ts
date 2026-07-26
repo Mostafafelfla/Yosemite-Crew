@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { AuditTrailController } from "src/controllers/web/audit-trail.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { AuditTrailController } from "../controllers/web/audit-trail.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

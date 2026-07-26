@@ -15,17 +15,17 @@ import type {
 } from "@yosemite-crew/types";
 import { normalizeTemplateKind } from "@yosemite-crew/types";
 import { z } from "zod";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   normalizeClinicalTemplateSchemaSnapshot,
   validateClinicalTemplateBlueprint,
-} from "src/services/clinical-template-blueprints";
+} from "./clinical-template-blueprints.js";
 import {
   createRenderedDocumentRecord,
   type PersistRenderedDocumentInput,
-} from "src/services/rendered-document.service";
-import { validateTaskWorkflowTemplateBlueprint } from "src/services/task-workflow-blueprints";
-import { TaskWorkflowService } from "src/services/task-workflow.service";
+} from "./rendered-document.service.js";
+import { validateTaskWorkflowTemplateBlueprint } from "./task-workflow-blueprints.js";
+import { TaskWorkflowService } from "./task-workflow.service.js";
 
 export class TemplateServiceError extends Error {
   constructor(
@@ -429,8 +429,7 @@ const extractTemplateAppliesTo = (rules: unknown): TemplateAppliesTo | null => {
   const packageIds = normalizeResolverArray(raw.packageIds);
   const species = normalizeResolverArray(raw.species);
   const encounterModes = normalizeResolverArray(raw.encounterModes) as
-    | Array<"OUTPATIENT" | "INPATIENT">
-    | undefined;
+    Array<"OUTPATIENT" | "INPATIENT"> | undefined;
   const organisationTypes = normalizeResolverArray(raw.organisationTypes);
   const specialityIds = normalizeResolverArray(raw.specialityIds);
   const defaultForKind =
@@ -1465,8 +1464,7 @@ export const TemplateService = {
       );
 
       let renderedDocumentSummary:
-        | Awaited<ReturnType<typeof createRenderedDocumentRecord>>
-        | undefined;
+        Awaited<ReturnType<typeof createRenderedDocumentRecord>> | undefined;
 
       if (DOCUMENT_BACKED_TEMPLATE_KINDS.has(instance.template.kind)) {
         const normalizedTemplateKind = normalizeTemplateKind(

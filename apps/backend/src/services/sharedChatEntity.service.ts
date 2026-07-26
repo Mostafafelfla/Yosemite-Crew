@@ -1,9 +1,9 @@
 // src/services/sharedChatEntity.service.ts
 import { StreamChat } from "stream-chat";
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { ChatServiceError } from "src/services/chat.service";
-import logger from "src/utils/logger";
+import { prisma } from "../config/prisma.js";
+import { ChatServiceError } from "./chat.service.js";
+import logger from "../utils/logger.js";
 
 const STREAM_KEY = process.env.STREAM_API_KEY!;
 const STREAM_SECRET = process.env.STREAM_API_SECRET!;

@@ -19,13 +19,13 @@ import {
   type SoapNoteDocumentData,
   type VitalRecordDocumentData,
 } from "@yosemite-crew/lib";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   renderPdf,
   type PdfField,
   type PdfSection,
   type PdfBranding,
-} from "src/services/formPDF.service";
+} from "./formPDF.service.js";
 import type { RenderedDocumentSource } from "@yosemite-crew/types";
 
 type RenderedDocumentPdfSource = {

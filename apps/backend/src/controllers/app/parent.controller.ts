@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   ParentService,
   ParentServiceError,
-} from "../../services/parent.service";
+} from "../../services/parent.service.js";
 import type { ParentRequestDTO } from "@yosemite-crew/types";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
-import { getProfileUploadUrl } from "./profile-upload.handler";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { getProfileUploadUrl } from "./profile-upload.handler.js";
 import {
   resolveOrganisationIdFromRequest,
   resolveUserIdFromRequest,
-} from "src/utils/request";
+} from "../../utils/request.js";
 
 // Payload checker
 type ParentRequestBody = ParentRequestDTO | { payload?: unknown } | undefined;

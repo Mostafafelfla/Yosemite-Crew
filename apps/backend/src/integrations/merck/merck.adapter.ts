@@ -1,7 +1,4 @@
-import {
-  IntegrationAdapter,
-  IntegrationValidationResult,
-} from "src/integrations/types";
+import { IntegrationAdapter, IntegrationValidationResult } from "../types.js";
 
 export class MerckAdapter implements IntegrationAdapter {
   validateCredentials(): Promise<IntegrationValidationResult> {

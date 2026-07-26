@@ -1,7 +1,7 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import path from "node:path";
-import { ClinicalTermsService } from "src/services/clinical-terms.service";
+import { ClinicalTermsService } from "../services/clinical-terms.service.js";
 
 const main = async () => {
   const mongoUri = process.env.MONGODB_URI;

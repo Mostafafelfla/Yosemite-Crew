@@ -3,14 +3,14 @@ import AuditTrailModel, {
   AuditEntityType,
   AuditEventType,
   type AuditTrailDocument,
-} from "../models/audit-trail";
+} from "../models/audit-trail.js";
 import { Prisma } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
-import logger from "src/utils/logger";
-import { ParentModel } from "src/models/parent";
-import UserModel from "src/models/user";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { prisma } from "../config/prisma.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
+import logger from "../utils/logger.js";
+import { ParentModel } from "../models/parent.js";
+import UserModel from "../models/user.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
 
 export class AuditTrailServiceError extends Error {
   constructor(

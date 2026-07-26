@@ -4,8 +4,8 @@ import {
   FormAssignmentStatus as PrismaFormAssignmentStatus,
 } from "@prisma/client";
 import { z } from "zod";
-import { prisma } from "src/config/prisma";
-import { TemplateService } from "src/services/template.service";
+import { prisma } from "../config/prisma.js";
+import { TemplateService } from "./template.service.js";
 import type {
   FormAssignmentCreateInput,
   FormAssignmentLike,

@@ -5,23 +5,23 @@ import {
   FormModel,
   FormSubmissionDocument,
   FormSubmissionModel,
-} from "src/models/form";
-import OrganizationModel from "src/models/organization";
-import UserModel from "src/models/user";
-import UserOrganizationModel from "src/models/user-organization";
+} from "../../models/form.js";
+import OrganizationModel from "../../models/organization.js";
+import UserModel from "../../models/user.js";
+import UserOrganizationModel from "../../models/user-organization.js";
 import {
   DocumensoExternalRole,
   DocumensoService,
-} from "src/services/documenso.service";
-import { FormAssignmentService } from "src/services/form-assignment.service";
-import { completePersistedRenderedDocumentSigning } from "src/services/rendered-document.service";
-import { OrganizationService } from "src/services/organization.service";
-import { WorkspaceDocumentPacketService } from "src/services/workspace-document-packet.service";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
-import logger from "src/utils/logger";
-import { prisma } from "src/config/prisma";
+} from "../../services/documenso.service.js";
+import { FormAssignmentService } from "../../services/form-assignment.service.js";
+import { completePersistedRenderedDocumentSigning } from "../../services/rendered-document.service.js";
+import { OrganizationService } from "../../services/organization.service.js";
+import { WorkspaceDocumentPacketService } from "../../services/workspace-document-packet.service.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
+import logger from "../../utils/logger.js";
+import { prisma } from "../../config/prisma.js";
 import { Prisma } from "@prisma/client";
-import { isReadFromPostgres } from "src/config/read-switch";
+import { isReadFromPostgres } from "../../config/read-switch.js";
 
 interface DocumensoWebhookBody {
   event?: string;
@@ -285,8 +285,7 @@ export const DocumensoWebhookController = {
       const rawBody = req.body as Buffer;
 
       const signature = req.headers["x-documenso-signature"] as
-        | string
-        | undefined;
+        string | undefined;
       if (!isDocumensoWebhookSignatureValid(rawBody, signature)) {
         return res.status(401).end();
       }
@@ -441,8 +440,7 @@ export const DocumensoKeyController = {
     try {
       logger.info("Getting Webhook request from documenso");
       const signature = req.headers["x-documenso-signature"] as
-        | string
-        | undefined;
+        string | undefined;
       const secret = process.env.DOCUMENSO_PMS_WEBHOOK_SECRET;
 
       if (!secret) {

@@ -1,7 +1,7 @@
-import { prisma } from "src/config/prisma";
-import { LabOrderServiceError } from "src/services/lab-order.service";
-import { IntegrationService } from "src/services/integration.service";
-import { IdexxClient } from "src/integrations/idexx/idexx.client";
+import { prisma } from "../../config/prisma.js";
+import { LabOrderServiceError } from "../../services/lab-order.service.js";
+import { IntegrationService } from "../../services/integration.service.js";
+import { IdexxClient } from "../../integrations/idexx/idexx.client.js";
 
 export type IdexxLookupField = "species" | "breed" | "providerCode";
 

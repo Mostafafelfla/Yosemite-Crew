@@ -1,6 +1,6 @@
-import { prisma } from "src/config/prisma";
-import logger from "src/utils/logger";
-import { assertSafeString } from "src/utils/sanitize";
+import { prisma } from "../config/prisma.js";
+import logger from "../utils/logger.js";
+import { assertSafeString } from "../utils/sanitize.js";
 
 type AuthUserMobileRecord = {
   id: string;

@@ -3,14 +3,14 @@ import { z } from "zod";
 import {
   ServiceService,
   ServiceServiceError,
-} from "../../services/service.service";
+} from "../../services/service.service.js";
 import {
   CatalogService,
   CatalogServiceError,
-} from "../../services/catalog.service";
-import logger from "../../utils/logger";
+} from "../../services/catalog.service.js";
+import logger from "../../utils/logger.js";
 import { ServiceRequestDTO } from "@yosemite-crew/types";
-import type { OrgRequest } from "src/middlewares/rbac";
+import type { OrgRequest } from "../../middlewares/rbac.js";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 type BookableSlotsPayload = {
@@ -25,9 +25,9 @@ type CalendarPrefillPayload = {
   leadId?: string;
   serviceIds: string[];
 };
-import helpers from "src/utils/helper";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import { getParentAddressForAuthUser } from "src/utils/location";
+import helpers from "../../utils/helper.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import { getParentAddressForAuthUser } from "../../utils/location.js";
 
 dayjs.extend(utc);
 

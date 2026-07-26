@@ -6,11 +6,11 @@ import {
   TaskStatus as PrismaTaskStatus,
 } from "@prisma/client";
 import { isTaskCategory } from "@yosemite-crew/types";
-import { prisma } from "src/config/prisma";
-import { AuditTrailService } from "./audit-trail.service";
-import type { TaskWorkflowSeed } from "./task-workflow-materializer";
-import { sendEmailTemplate } from "../utils/email";
-import logger from "../utils/logger";
+import { prisma } from "../config/prisma.js";
+import { AuditTrailService } from "./audit-trail.service.js";
+import type { TaskWorkflowSeed } from "./task-workflow-materializer.js";
+import { sendEmailTemplate } from "../utils/email.js";
+import logger from "../utils/logger.js";
 
 export class TaskServiceError extends Error {
   constructor(
@@ -469,9 +469,7 @@ const normalizeRecurrenceScope = (value?: string): RecurrenceScope => {
 
 const getSeriesMasterId = (task: TaskRow): string | undefined => {
   const recurrence = task.recurrence as
-    | { isMaster?: boolean; masterTaskId?: string }
-    | null
-    | undefined;
+    { isMaster?: boolean; masterTaskId?: string } | null | undefined;
 
   if (recurrence?.masterTaskId) return recurrence.masterTaskId;
   if (recurrence?.isMaster) return task.id;
@@ -1327,8 +1325,7 @@ export const TaskService = {
       (template.defaultRole === "PARENT" ? "PARENT_TASK" : "EMPLOYEE_TASK");
 
     const templateMedication = (template.defaultMedication ?? undefined) as
-      | MedicationInput
-      | undefined;
+      MedicationInput | undefined;
 
     assertCompanionRequirement({
       audience,
@@ -1523,9 +1520,7 @@ export const TaskService = {
   ): Promise<TaskLike> {
     const inferredScope = normalizeRecurrenceScope(scopeOrOrganisationId);
     const scope: RecurrenceScope =
-      scopeOrOrganisationId === inferredScope
-        ? inferredScope
-        : "THIS";
+      scopeOrOrganisationId === inferredScope ? inferredScope : "THIS";
     const orgScope = asNonEmptyString(
       organisationId ??
         (scope === "THIS" && scopeOrOrganisationId !== "THIS"

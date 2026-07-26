@@ -16,28 +16,28 @@ import {
   calculateInvoicePricing,
   roundMoney,
   type InvoiceDiscountInput as PricingInvoiceDiscountInput,
-} from "./finance/pricing";
+} from "./finance/pricing.js";
 import {
   DEFAULT_TAX_BEHAVIOR,
   getInvoiceTaxProviderAdapter,
-} from "./finance/tax";
+} from "./finance/tax.js";
 import {
   FinancePaymentService,
   getInvoiceFinancialSummary,
-} from "./finance/payment";
-import { FinanceEventService } from "./finance/events";
-import { createRenderedDocumentRecord } from "./rendered-document.service";
-import { prisma } from "src/config/prisma";
-import { CatalogService, CatalogServiceError } from "./catalog.service";
-import { NotificationTemplates } from "src/utils/notificationTemplates";
-import { NotificationService } from "./notification.service";
-import { AuditTrailService } from "./audit-trail.service";
-import { sendEmailTemplate } from "src/utils/email";
-import logger from "src/utils/logger";
-import type { AuditEventType } from "src/models/audit-trail";
-import { resolvePaymentCollectionMethod } from "src/utils/payment";
-import { getOrgBillingCurrency } from "src/utils/billing";
-import { assertSafeString } from "src/utils/sanitize";
+} from "./finance/payment.js";
+import { FinanceEventService } from "./finance/events.js";
+import { createRenderedDocumentRecord } from "./rendered-document.service.js";
+import { prisma } from "../config/prisma.js";
+import { CatalogService, CatalogServiceError } from "./catalog.service.js";
+import { NotificationTemplates } from "../utils/notificationTemplates.js";
+import { NotificationService } from "./notification.service.js";
+import { AuditTrailService } from "./audit-trail.service.js";
+import { sendEmailTemplate } from "../utils/email.js";
+import logger from "../utils/logger.js";
+import type { AuditEventType } from "../models/audit-trail.js";
+import { resolvePaymentCollectionMethod } from "../utils/payment.js";
+import { getOrgBillingCurrency } from "../utils/billing.js";
+import { assertSafeString } from "../utils/sanitize.js";
 import type Stripe from "stripe";
 
 export class InvoiceServiceError extends Error {
@@ -143,9 +143,7 @@ type CreateInvoiceInput = {
   notes?: string;
   invoiceDiscount?: PricingInvoiceDiscountInput;
   paymentCollectionMethod:
-    | "PAYMENT_INTENT"
-    | "PAYMENT_LINK"
-    | "PAYMENT_AT_CLINIC";
+    "PAYMENT_INTENT" | "PAYMENT_LINK" | "PAYMENT_AT_CLINIC";
 };
 
 type IssueCreditNoteInput = {
@@ -837,8 +835,7 @@ const buildBootstrapInvoiceItems = async (params: {
     typeof (appointment.appointmentType as Record<string, unknown>).name ===
       "string"
       ? ((appointment.appointmentType as Record<string, unknown>).name as
-          | string
-          | undefined)
+          string | undefined)
       : undefined;
 
   return [
@@ -1314,11 +1311,7 @@ export const InvoiceService = {
     organisationId: string,
     input: {
       settlementChannel?:
-        | "CASH"
-        | "BANK_TRANSFER"
-        | "CARD_PRESENT"
-        | "DEPOSIT"
-        | "OTHER";
+        "CASH" | "BANK_TRANSFER" | "CARD_PRESENT" | "DEPOSIT" | "OTHER";
       reference?: string;
       receivedAt?: Date;
     } = {},

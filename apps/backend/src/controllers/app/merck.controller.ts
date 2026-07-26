@@ -1,10 +1,7 @@
 import { Request, Response } from "express";
 import { randomUUID } from "node:crypto";
-import { MerckService } from "src/services/merck.service";
-import {
-  handleMerckError,
-  sendMerckSuccess,
-} from "src/controllers/merck/merck-response";
+import { MerckService } from "../../services/merck.service.js";
+import { handleMerckError, sendMerckSuccess } from "../merck/merck-response.js";
 
 export const MerckMobileController = {
   async searchManuals(req: Request, res: Response) {

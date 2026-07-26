@@ -1,9 +1,12 @@
 import { Router } from "express";
 import rateLimit from "express-rate-limit";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
-import { MerckController } from "src/controllers/web/merck.controller";
-import { MerckMobileController } from "src/controllers/app/merck.controller";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
+import { MerckController } from "../controllers/web/merck.controller.js";
+import { MerckMobileController } from "../controllers/app/merck.controller.js";
 
 const router = Router();
 

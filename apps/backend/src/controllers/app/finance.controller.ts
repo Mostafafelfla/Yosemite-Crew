@@ -3,23 +3,23 @@ import { ZodError, z } from "zod";
 import {
   FinancePaymentError,
   FinancePaymentService,
-} from "src/services/finance/payment";
-import { FinanceSubscriptionService } from "src/services/finance/subscription";
+} from "../../services/finance/payment.js";
+import { FinanceSubscriptionService } from "../../services/finance/subscription.js";
 import {
   FinanceEventService,
   resolveActorDisplayName,
-} from "src/services/finance/events";
-import { StripeController } from "src/controllers/web/stripe.controller";
-import { StripeService } from "src/services/stripe.service";
+} from "../../services/finance/events.js";
+import { StripeController } from "../web/stripe.controller.js";
+import { StripeService } from "../../services/stripe.service.js";
 import {
   InvoiceService,
   InvoiceServiceError,
-} from "src/services/invoice.service";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import logger from "src/utils/logger";
-import { OrgRequest } from "src/middlewares/rbac";
-import { AuthenticatedRequest } from "src/middlewares/auth";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/invoice.service.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import logger from "../../utils/logger.js";
+import { OrgRequest } from "../../middlewares/rbac.js";
+import { AuthenticatedRequest } from "../../middlewares/auth.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const CreateInvoicePaymentSessionBodySchema = z.object({
   provider: z.string().trim().min(1).optional(),
@@ -249,9 +249,7 @@ export const FinanceController = {
         patientId: body.data.patientId,
         organisationId: body.data.organisationId,
         paymentCollectionMethod: body.data.paymentCollectionMethod as
-          | "PAYMENT_INTENT"
-          | "PAYMENT_LINK"
-          | "PAYMENT_AT_CLINIC",
+          "PAYMENT_INTENT" | "PAYMENT_LINK" | "PAYMENT_AT_CLINIC",
         items,
         invoiceDiscount: body.data.invoiceDiscount,
         notes: body.data.notes,
@@ -1247,11 +1245,7 @@ export const FinanceController = {
         {
           provider: "MANUAL",
           settlementChannel: settlementChannel as
-            | "CASH"
-            | "BANK_TRANSFER"
-            | "CARD_PRESENT"
-            | "DEPOSIT"
-            | "OTHER",
+            "CASH" | "BANK_TRANSFER" | "CARD_PRESENT" | "DEPOSIT" | "OTHER",
           amount: body.data.amount,
           currency: body.data.currency,
           reference: body.data.reference,

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BaseAvailabilityController } from "../controllers/web/base-availability.controller";
+import { BaseAvailabilityController } from "../controllers/web/base-availability.controller.js";
 
 const router = Router();
 

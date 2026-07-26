@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { StripeService } from "src/services/stripe.service";
-import logger from "src/utils/logger";
+import { StripeService } from "../../services/stripe.service.js";
+import logger from "../../utils/logger.js";
 
 export const StripeController = {
   createOrGetConnectedAccount: async (req: Request, res: Response) => {

@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import UserModel from "src/models/user";
+import { prisma } from "../../config/prisma.js";
+import { isReadFromPostgres } from "../../config/read-switch.js";
+import UserModel from "../../models/user.js";
 import {
   getPersistedRenderedDocument,
   getPersistedRenderedDocumentPdf,
@@ -10,9 +10,9 @@ import {
   rerenderPersistedClinicalRenderedDocumentPdf,
   type RenderedDocumentSigning,
   signPersistedRenderedDocument,
-} from "src/services/rendered-document.service";
-import { createFhirErrorHandler } from "src/controllers/web/fhir-controller.shared";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/rendered-document.service.js";
+import { createFhirErrorHandler } from "./fhir-controller.shared.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const signRenderedDocumentSchema = z.object({
   signatureText: z.string().trim().min(1).optional(),

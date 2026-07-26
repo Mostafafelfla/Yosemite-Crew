@@ -1,13 +1,13 @@
 // src/services/adverseEvent.service.ts
 import AdverseEventReportModel, {
   AdverseEventReportDocument,
-} from "../models/adverse-event";
+} from "../models/adverse-event.js";
 import { FilterQuery } from "mongoose";
 import { AdverseEventReport, AdverseEventStatus } from "@yosemite-crew/types";
 import { Prisma } from "@prisma/client";
-import { prisma } from "../config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 
 export class AdverseEventServiceError extends Error {
   constructor(

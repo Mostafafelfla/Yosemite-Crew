@@ -11,9 +11,9 @@ import {
 import {
   CaseEncounterService,
   CaseEncounterServiceError,
-} from "src/services/case-encounter.service";
-import logger from "src/utils/logger";
-import { resolveUserIdFromRequest } from "src/utils/request";
+} from "../../services/case-encounter.service.js";
+import logger from "../../utils/logger.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 const caseResourceSchema = z
   .object({ resourceType: z.literal("EpisodeOfCare") })

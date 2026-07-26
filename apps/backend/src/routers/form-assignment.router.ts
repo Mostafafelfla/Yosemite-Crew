@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { FormAssignmentController } from "src/controllers/web/form-assignment.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { FormAssignmentController } from "../controllers/web/form-assignment.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

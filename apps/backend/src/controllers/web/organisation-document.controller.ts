@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
 import { stringify } from "node:querystring";
-import { generatePresignedUrl } from "src/middlewares/upload";
-import { OrgDocumentCategory } from "src/models/organisation-document";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
+import { OrgDocumentCategory } from "../../models/organisation-document.js";
 import {
   CreateOrgDocumentInput,
   OrganizationDocumentService,
   OrgDocumentServiceError,
   UpdateOrgDocumentInput,
-} from "src/services/organisation-document.service";
-import logger from "src/utils/logger";
+} from "../../services/organisation-document.service.js";
+import logger from "../../utils/logger.js";
 
 type CreateOrgDocumentBody = Omit<CreateOrgDocumentInput, "organisationId">;
 type UpsertPolicyBody = Omit<CreateOrgDocumentInput, "organisationId">;

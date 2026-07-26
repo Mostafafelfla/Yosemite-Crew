@@ -2,8 +2,8 @@ import type { TemplateSchemaSnapshot } from "@yosemite-crew/types";
 import {
   buildClinicalTemplateSchemaSnapshot,
   buildDefaultSoapNoteSchemaSnapshot,
-} from "src/services/clinical-template-blueprints";
-import { buildTaskWorkflowTemplateSchemaSnapshot } from "src/services/task-workflow-blueprints";
+} from "../services/clinical-template-blueprints.js";
+import { buildTaskWorkflowTemplateSchemaSnapshot } from "../services/task-workflow-blueprints.js";
 
 export type DefaultLibraryTemplateSeed = {
   id: string;

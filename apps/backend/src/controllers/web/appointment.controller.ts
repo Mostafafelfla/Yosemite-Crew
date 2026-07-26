@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { AppointmentService } from "src/services/appointment.service";
+import { AppointmentService } from "../../services/appointment.service.js";
 import { AppointmentRequestDTO } from "@yosemite-crew/types";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import logger from "src/utils/logger";
-import { AppointmentStatus } from "src/models/appointment";
-import { generatePresignedUrl } from "src/middlewares/upload";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import logger from "../../utils/logger.js";
+import { AppointmentStatus } from "../../models/appointment.js";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 type RescheduleRequestBody = {
   startTime: string | Date;

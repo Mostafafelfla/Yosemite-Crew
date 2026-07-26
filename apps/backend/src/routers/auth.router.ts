@@ -2,8 +2,8 @@ import { Router } from "express";
 import type { Response } from "express";
 import type { SessionRequest } from "@yosemite-crew/auth";
 import { requireAuth, getSessionUserId } from "@yosemite-crew/auth";
-import { MfaController } from "../controllers/web/mfa.controller";
-import { MfaDebugController } from "../controllers/web/mfa-debug.controller";
+import { MfaController } from "../controllers/web/mfa.controller.js";
+import { MfaDebugController } from "../controllers/web/mfa-debug.controller.js";
 
 const router = Router();
 router.get("/me", requireAuth(), (req: SessionRequest, res: Response) => {

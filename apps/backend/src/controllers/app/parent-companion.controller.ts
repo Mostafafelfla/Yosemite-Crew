@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   ParentCompanionService,
   ParentCompanionServiceError,
-} from "../../services/parent-companion.service";
-import { ParentService } from "src/services/parent.service";
+} from "../../services/parent-companion.service.js";
+import { ParentService } from "../../services/parent.service.js";
 import type { ParentCompanionPermissions } from "@yosemite-crew/types";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 
 const resolveAuthenticatedUserId = (req: Request): string | undefined => {
   const userId = (req as AuthenticatedRequest).userId;

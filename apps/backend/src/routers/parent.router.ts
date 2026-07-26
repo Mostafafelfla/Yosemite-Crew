@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { ParentController } from "../controllers/app/parent.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { withOrgPermissions, requirePermission } from "src/middlewares/rbac";
-import { CompanionController } from "src/controllers/app/companion.controller";
+import { ParentController } from "../controllers/app/parent.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { withOrgPermissions, requirePermission } from "../middlewares/rbac.js";
+import { CompanionController } from "../controllers/app/companion.controller.js";
 
 const router = Router();
 

@@ -1,6 +1,9 @@
 import { Router } from "express";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { CodeController } from "src/controllers/web/code.controller";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { CodeController } from "../controllers/web/code.controller.js";
 
 const router = Router();
 

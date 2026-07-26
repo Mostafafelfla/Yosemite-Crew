@@ -5,7 +5,7 @@ import type {
   ParentCompanionRole,
   ParentCompanionStatus,
 } from "@yosemite-crew/types";
-import type { ParentMongo } from "./parent";
+import type { ParentMongo } from "./parent.js";
 
 export interface ParentCompanionMongo {
   parentId: Types.ObjectId;

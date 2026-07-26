@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { ServiceController } from "../controllers/web/service.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+import { ServiceController } from "../controllers/web/service.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

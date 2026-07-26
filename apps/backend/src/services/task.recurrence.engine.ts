@@ -5,7 +5,7 @@ import timezone from "dayjs/plugin/timezone.js";
 import cronParser from "cron-parser";
 
 import { Prisma, TaskAudience, TaskSource, TaskStatus } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);

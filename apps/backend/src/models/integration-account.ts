@@ -3,7 +3,7 @@ import type {
   IntegrationProvider,
   IntegrationStatus,
   IntegrationCredentialsStatus,
-} from "src/integrations";
+} from "../integrations/index.js";
 
 export interface IntegrationAccountMongo {
   organisationId: string;

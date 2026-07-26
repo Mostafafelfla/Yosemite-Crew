@@ -1,8 +1,8 @@
 import { Job, Worker } from "bullmq";
-import { redisConnection } from "../queues/bull.config";
-import logger from "src/utils/logger";
-import { AppointmentJobs } from "src/queues/appointment.queue";
-import { AppointmentService } from "src/services/appointment.service";
+import { redisConnection } from "../queues/bull.config.js";
+import logger from "../utils/logger.js";
+import { AppointmentJobs } from "../queues/appointment.queue.js";
+import { AppointmentService } from "../services/appointment.service.js";
 
 type AppointmentJobData = {
   graceMinutes?: number;

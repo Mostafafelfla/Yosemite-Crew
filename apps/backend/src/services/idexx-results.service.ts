@@ -1,10 +1,10 @@
 import { Prisma, type LabOrderStatus } from "@prisma/client";
-import { IdexxResultsClient } from "src/integrations/idexx/idexx-results.client";
-import { prisma } from "src/config/prisma";
-import logger from "src/utils/logger";
-import { uploadBufferAsFile } from "src/middlewares/upload";
-import { DocumentService } from "src/services/document.service";
-import { TaskService } from "src/services/task.service";
+import { IdexxResultsClient } from "../integrations/idexx/idexx-results.client.js";
+import { prisma } from "../config/prisma.js";
+import logger from "../utils/logger.js";
+import { uploadBufferAsFile } from "../middlewares/upload.js";
+import { DocumentService } from "./document.service.js";
+import { TaskService } from "./task.service.js";
 
 type LatestResultsResponse = {
   batchId?: string;

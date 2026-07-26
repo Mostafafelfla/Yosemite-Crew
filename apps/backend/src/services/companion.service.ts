@@ -15,18 +15,18 @@ import {
   RecordStatus as PrismaRecordStatus,
   SourceType as PrismaSourceType,
 } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   ParentCompanionService,
   ParentCompanionServiceError,
-} from "./parent-companion.service";
-import { AuditTrailService } from "./audit-trail.service";
-import { ParentService } from "./parent.service";
-import { buildS3Key, moveFile } from "src/middlewares/upload";
+} from "./parent-companion.service.js";
+import { AuditTrailService } from "./audit-trail.service.js";
+import { ParentService } from "./parent.service.js";
+import { buildS3Key, moveFile } from "../middlewares/upload.js";
 import escapeStringRegexp from "escape-string-regexp";
-import logger from "src/utils/logger";
-import { TaskLibraryService } from "./taskLibrary.service";
-import { CreateFromLibraryInput, TaskService } from "./task.service";
+import logger from "../utils/logger.js";
+import { TaskLibraryService } from "./taskLibrary.service.js";
+import { CreateFromLibraryInput, TaskService } from "./task.service.js";
 
 export class CompanionServiceError extends Error {
   constructor(

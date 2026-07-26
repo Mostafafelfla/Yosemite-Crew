@@ -1,15 +1,15 @@
 import { Prisma } from "@prisma/client";
 import axios from "axios";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   WorkspaceService,
   WorkspaceServiceError,
-} from "src/services/workspace.prisma.service";
-import { DocumensoService } from "src/services/documenso.service";
-import { buildMergedClinicalPacketPdf } from "src/services/clinical-packet-pdf.service";
-import { renderCombinedClinicalPacketPdf } from "src/services/rendered-document-renderer.service";
-import { rerenderPersistedClinicalRenderedDocumentPdf } from "src/services/rendered-document.service";
-import logger from "src/utils/logger";
+} from "./workspace.prisma.service.js";
+import { DocumensoService } from "./documenso.service.js";
+import { buildMergedClinicalPacketPdf } from "./clinical-packet-pdf.service.js";
+import { renderCombinedClinicalPacketPdf } from "./rendered-document-renderer.service.js";
+import { rerenderPersistedClinicalRenderedDocumentPdf } from "./rendered-document.service.js";
+import logger from "../utils/logger.js";
 import type {
   WorkspaceDocumentPacketRow,
   WorkspaceDocumentPacketSigning,

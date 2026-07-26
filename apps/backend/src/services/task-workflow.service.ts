@@ -1,10 +1,10 @@
 import { AppointmentKind, Prisma, TemplateKind } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 import {
   materializeTaskWorkflowSeeds,
   type TaskWorkflowSeed,
-} from "./task-workflow-materializer";
-import { TaskService, type TaskAudience } from "./task.service";
+} from "./task-workflow-materializer.js";
+import { TaskService, type TaskAudience } from "./task.service.js";
 
 export class TaskWorkflowServiceError extends Error {
   constructor(

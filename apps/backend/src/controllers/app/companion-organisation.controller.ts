@@ -1,18 +1,18 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import { Types } from "mongoose";
 import {
   CompanionOrganisationService,
   CompanionOrganisationServiceError,
-} from "../../services/companion-organisation.service";
-import { ParentService } from "src/services/parent.service";
+} from "../../services/companion-organisation.service.js";
+import { ParentService } from "../../services/parent.service.js";
 import OrganizationModel, {
   type OrganizationMongo,
-} from "src/models/organization";
-import { prisma } from "src/config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import type { AuthenticatedRequest } from "src/middlewares/auth";
+} from "../../models/organization.js";
+import { prisma } from "../../config/prisma.js";
+import { isReadFromPostgres } from "../../config/read-switch.js";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import type { AuthenticatedRequest } from "../../middlewares/auth.js";
 
 type OrganisationType = OrganizationMongo["type"];
 

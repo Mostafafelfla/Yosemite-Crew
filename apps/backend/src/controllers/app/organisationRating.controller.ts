@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { AuthUserMobileService } from "src/services/authUserMobile.service";
-import { OrganizationRatingService } from "src/services/organisationReting.service";
-import logger from "src/utils/logger";
-import { resolveUserIdFromRequest } from "src/utils/request";
+import { AuthUserMobileService } from "../../services/authUserMobile.service.js";
+import { OrganizationRatingService } from "../../services/organisationReting.service.js";
+import logger from "../../utils/logger.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
 
 type RatingRequestBody = {
   rating: number;

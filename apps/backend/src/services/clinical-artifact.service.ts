@@ -7,14 +7,14 @@ import {
   buildRenderedDocumentPdfSnapshot,
   type RenderedDocumentKind,
 } from "@yosemite-crew/types";
-import { prisma } from "src/config/prisma";
-import { uploadBufferAsFile } from "src/middlewares/upload";
+import { prisma } from "../config/prisma.js";
+import { uploadBufferAsFile } from "../middlewares/upload.js";
 import {
   createRenderedDocumentRecord,
   type PersistRenderedDocumentInput,
-} from "src/services/rendered-document.service";
-import { renderRenderedDocumentPdfWithMetadata } from "src/services/rendered-document-renderer.service";
-import { InventoryConsumptionService } from "src/services/inventory-consumption.service";
+} from "./rendered-document.service.js";
+import { renderRenderedDocumentPdfWithMetadata } from "./rendered-document-renderer.service.js";
+import { InventoryConsumptionService } from "./inventory-consumption.service.js";
 
 export class ClinicalArtifactServiceError extends Error {
   constructor(
@@ -1424,8 +1424,7 @@ export const ClinicalArtifactService = {
         prescriptionId: artifact.prescription.id,
         medications: artifact.prescription.medications,
         metadata: artifact.prescription.metadata as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
         requestedBy: artifact.artifact.authorId,
         context: {
           appointmentId: artifact.artifact.appointmentId,
@@ -1523,8 +1522,7 @@ export const ClinicalArtifactService = {
         prescriptionId: updated.prescription.id,
         medications: updated.prescription.medications,
         metadata: updated.prescription.metadata as
-          | Prisma.InputJsonValue
-          | undefined,
+          Prisma.InputJsonValue | undefined,
         requestedBy: updated.artifact.authorId,
         context: {
           appointmentId: updated.artifact.appointmentId,
@@ -1537,8 +1535,7 @@ export const ClinicalArtifactService = {
           organisationId: updated.artifact.organisationId,
           prescriptionId: updated.prescription.id,
           metadata: updated.prescription.metadata as
-            | Prisma.InputJsonValue
-            | undefined,
+            Prisma.InputJsonValue | undefined,
         },
       );
     }

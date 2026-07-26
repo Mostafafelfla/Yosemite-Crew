@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
-import logger from "../../utils/logger";
+import logger from "../../utils/logger.js";
 import {
   OrganisationSearchInput,
   OrganizationService,
   OrganizationServiceError,
   type OrganizationFHIRPayload,
-} from "../../services/organization.service";
-import { generatePresignedUrl } from "src/middlewares/upload";
+} from "../../services/organization.service.js";
+import { generatePresignedUrl } from "../../middlewares/upload.js";
 import { stringify } from "node:querystring";
-import helpers from "src/utils/helper";
-import { resolveUserIdFromRequest } from "src/utils/request";
-import { getParentAddressForAuthUser } from "src/utils/location";
+import helpers from "../../utils/helper.js";
+import { resolveUserIdFromRequest } from "../../utils/request.js";
+import { getParentAddressForAuthUser } from "../../utils/location.js";
 
 const isOrganizationPayload = (
   payload: unknown,

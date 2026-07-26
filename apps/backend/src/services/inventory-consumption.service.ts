@@ -5,7 +5,7 @@ import {
   PrescriptionDispenseRequestStatus,
   Prisma,
 } from "@prisma/client";
-import { prisma } from "src/config/prisma";
+import { prisma } from "../config/prisma.js";
 
 export class InventoryConsumptionServiceError extends Error {
   constructor(

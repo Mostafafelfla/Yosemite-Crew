@@ -2,9 +2,9 @@ import { Request, Response, Router } from "express";
 import {
   DocumensoAuthController,
   DocumensoKeyController,
-} from "src/controllers/web/documenso.controller";
-import { authorizeCognito } from "src/middlewares/auth";
-import { requirePermission, withOrgPermissions } from "src/middlewares/rbac";
+} from "../controllers/web/documenso.controller.js";
+import { authorizeCognito } from "../middlewares/auth.js";
+import { requirePermission, withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

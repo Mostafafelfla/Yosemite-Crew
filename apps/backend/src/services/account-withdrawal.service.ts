@@ -1,8 +1,8 @@
 // services/account-withdrawal.service.ts
-import { AccountWithdrawalModel } from "../models/account-withdrawal";
-import { prisma } from "../config/prisma";
-import { isReadFromPostgres } from "src/config/read-switch";
-import { handleDualWriteError, shouldDualWrite } from "src/utils/dual-write";
+import { AccountWithdrawalModel } from "../models/account-withdrawal.js";
+import { prisma } from "../config/prisma.js";
+import { isReadFromPostgres } from "../config/read-switch.js";
+import { handleDualWriteError, shouldDualWrite } from "../utils/dual-write.js";
 
 export class AccountWithdrawalServiceError extends Error {
   constructor(

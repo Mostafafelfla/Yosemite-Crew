@@ -1,7 +1,10 @@
 import { Router } from "express";
-import { AdverseEventController } from "../controllers/web/adverse-event.controller";
-import { authorizeCognito, authorizeCognitoMobile } from "src/middlewares/auth";
-import { withOrgPermissions } from "src/middlewares/rbac";
+import { AdverseEventController } from "../controllers/web/adverse-event.controller.js";
+import {
+  authorizeCognito,
+  authorizeCognitoMobile,
+} from "../middlewares/auth.js";
+import { withOrgPermissions } from "../middlewares/rbac.js";
 
 const router = Router();
 

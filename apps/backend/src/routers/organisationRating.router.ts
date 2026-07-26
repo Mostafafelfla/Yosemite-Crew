@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { OrganisationRatingController } from "src/controllers/app/organisationRating.controller";
-import { authorizeCognitoMobile } from "src/middlewares/auth";
+import { OrganisationRatingController } from "../controllers/app/organisationRating.controller.js";
+import { authorizeCognitoMobile } from "../middlewares/auth.js";
 const router = Router();
 
 router.post(
