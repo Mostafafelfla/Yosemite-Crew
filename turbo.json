@@ -16,6 +16,10 @@
         ".next/**",
         "!.next/cache/**",
         "storybook-static/**"
+      ],
+      "env": [
+        "DATABASE_URL",
+        "DIRECT_URL"
       ]
     },
     "test": {
